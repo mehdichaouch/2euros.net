@@ -1,0 +1,12 @@
+<?php
+$serverip = "127.0.0.1";
+$user = "user";
+$pass = "pass";
+$dbname = "dbname";
+
+$host="127.0.0.1"; // Host name
+$username="user"; // Mysql username
+$password="pass"; // Mysql password
+$db_name="dbname"; // Database name
+$tbl_name="tblname"; // Table name
+?>
