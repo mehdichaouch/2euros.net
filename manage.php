@@ -36,6 +36,12 @@
   <p>Add Coin</p>
 
   <form role="form" action="./manage.php">
+    <?php
+        var_dump($_POST);
+        echo '<hr>';
+        echo '<pre>' . var_dump($_POST) . '</pre>';
+    ?>
+
     <div class="form-group">
       
       <label for="sel1">Year</label>
@@ -43,10 +49,6 @@
         
         <!-- DROPDOWN 1 -->
         <?php
-
-        var_dump($_POST);
-        echo '<hr>';
-        echo '<pre>' . var_dump($_POST) . '</pre>';
         $username = $_SESSION["username"];
         //Database Credentials
         include 'conf/db.php';
