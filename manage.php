@@ -65,8 +65,17 @@ if(!isset($_SESSION['username'])){
           mysql_select_db('2euros');
           $sql = "SELECT DISTINCT year FROM Coins";
           $result = mysql_query($sql);
+
+          $selectedYear = $_GET['year'];
           while ($row = mysql_fetch_array($result)) {
-            echo "<option value='" . $row['year'] ."'>" . $row['year'] . "</option>";
+            if ($row['year'] === $selectedYear) {
+              $selected = ' selected'
+            }
+
+            //echo "<option value=\"$row['year']\" $selected>$row['year']</option>";
+            echo '<option value="' . $row['year'] .'"'  . $selected . '>'. $row['year'] . '</option>';
+
+          <option value="2006">2006</option>
           }
 
         // Close MySQL connection
