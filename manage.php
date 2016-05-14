@@ -68,6 +68,7 @@ if(!isset($_SESSION['username'])){
 
           $selectedYear = $_GET['year'];
           while ($row = mysql_fetch_array($result)) {
+            selected = '';
             if ($row['year'] === $selectedYear) {
               $selected = ' selected';
             }
