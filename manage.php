@@ -1,9 +1,9 @@
 <!-- SESSION -->
 <?php
-  session_start();
-  if(!isset($_SESSION['username'])){
-    header("location:login.php");
-  }
+session_start();
+if(!isset($_SESSION['username'])){
+  header("location:login.php");
+}
 ?>
 
 <!-- HEADER -->
@@ -24,86 +24,88 @@
 
 <body>
 
-<!-- NAVBAR -->
-<?php
+  <!-- NAVBAR -->
+  <?php
   include 'navbar.php';
-?>
+  ?>
 
-<!-- CONTENT -->
-<div class="container">
+  <!-- CONTENT -->
+  <div class="container">
 
-  <h2>Manage</h2>
-  <p>Add Coin</p>
+    <h2>Manage</h2>
+    <p>Add Coin</p>
 
-  <form role="form" action="./manage.php">
-    <?php
-        var_dump($_POST);
-        var_dump($_GET);
-        echo '<hr>';
-        echo '<pre>' . var_dump($_GET) . '</pre>';
-    ?>
+    <form role="form" action="./manage.php">
+      <?php
+      echo '<pre>' . var_dump($_GET) . '</pre>';
+      echo '<hr>';
+      ?>
 
-    <div class="form-group">
-      
-      <label for="sel1">Year</label>
-      <select class="form-control" id="sel1" name="year">
-        
-        <!-- DROPDOWN 1 -->
-        <?php
-        $username = $_SESSION["username"];
+      <div class="form-group">
+
+
+
+        <label for="sel1">Year</label>
+        <select class="form-control" id="sel1" name="year">
+
+          <!-- DROPDOWN 1 -->
+          <?php
+          $username = $_SESSION["username"];
         //Database Credentials
-        include 'conf/db.php';
+          include 'conf/db.php';
 
         // Create & check connection
-        $conn = new mysqli($serverip, $user, $pass, $dbname);
-        if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-        }
-        
+          $conn = new mysqli($serverip, $user, $pass, $dbname);
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+
         // Create connection
-        mysql_connect($serverip, $user, $pass, $dbname);
-        mysql_select_db('2euros');
-        $sql = "SELECT DISTINCT year FROM Coins";
-        $result = mysql_query($sql);
-        while ($row = mysql_fetch_array($result)) {
-          echo "<option value='" . $row['year'] ."'>" . $row['year'] . "</option>";
-        }
+          mysql_connect($serverip, $user, $pass, $dbname);
+          mysql_select_db('2euros');
+          $sql = "SELECT DISTINCT year FROM Coins";
+          $result = mysql_query($sql);
+          while ($row = mysql_fetch_array($result)) {
+            echo "<option value='" . $row['year'] ."'>" . $row['year'] . "</option>";
+          }
 
         // Close MySQL connection
-        $conn->close();
+          $conn->close();
 
-        ?>
+          ?>
 
-      </select>
-      <br>
+        </select>
+        <br>
 
-      <label for="sel2">Country</label>
-      <select class="form-control" id="sel2" name="country">
-        <option>xxx</option>
-      </select>
-      <br>
+        <?php if ($_GET['year']) { ?>
+          <label for="sel2">Country</label>
+          <select class="form-control" id="sel2" name="country">
+            <option>xxx</option>
+          </select>
+          <br>
 
-      <label for="sel3">Event</label>
-      <select class="form-control" id="sel3" name="event">
-        <option>xxx</option>
-      </select>
-      <br>
+          <label for="sel3">Event</label>
+          <select class="form-control" id="sel3" name="event">
+            <option>xxx</option>
+          </select>
+          <br>
 
-      <label for="sel4">State</label>
-      <select class="form-control" id="sel4" name="state">
-        <option>MINT</option>
-        <option>GOOD</option>
-        <option>BAD</option>
-      </select>
-      <br>
+          <label for="sel4">State</label>
+          <select class="form-control" id="sel4" name="state">
+            <option>MINT</option>
+            <option>GOOD</option>
+            <option>BAD</option>
+          </select>
+          <br>
+          <?php } ?>
 
-      <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Submit</button>
+
+        </div>
+      </form>
 
     </div>
-  </form>
 
-</div>
+  </body>
 
-</body>
-
-</html>
+  </html>
