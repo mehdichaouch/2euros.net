@@ -55,7 +55,7 @@
         
         // Create connection
         mysql_connect($serverip, $user, $pass, $dbname);
-        mysql_select_db('my2euro');
+        mysql_select_db('2euros');
         $sql = "SELECT DISTINCT year FROM Coins";
         $result = mysql_query($sql);
         while ($row = mysql_fetch_array($result)) {
