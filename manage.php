@@ -69,13 +69,11 @@ if(!isset($_SESSION['username'])){
           $selectedYear = $_GET['year'];
           while ($row = mysql_fetch_array($result)) {
             if ($row['year'] === $selectedYear) {
-              $selected = ' selected'
+              $selected = ' selected';
             }
 
             //echo "<option value=\"$row['year']\" $selected>$row['year']</option>";
             echo '<option value="' . $row['year'] .'"'  . $selected . '>'. $row['year'] . '</option>';
-
-          <option value="2006">2006</option>
           }
 
         // Close MySQL connection
