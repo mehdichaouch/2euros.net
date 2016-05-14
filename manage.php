@@ -38,8 +38,9 @@
   <form role="form" action="./manage.php">
     <?php
         var_dump($_POST);
+        var_dump($_GET);
         echo '<hr>';
-        echo '<pre>' . var_dump($_POST) . '</pre>';
+        echo '<pre>' . var_dump($_GET) . '</pre>';
     ?>
 
     <div class="form-group">
