@@ -45,7 +45,7 @@
     <div class="form-group">
       
       <label for="sel1">Year</label>
-      <select class="form-control" id="sel1">
+      <select class="form-control" id="sel1" name="year">
         
         <!-- DROPDOWN 1 -->
         <?php
@@ -77,19 +77,19 @@
       <br>
 
       <label for="sel2">Country</label>
-      <select class="form-control" id="sel2">
+      <select class="form-control" id="sel2" name="country">
         <option>xxx</option>
       </select>
       <br>
 
       <label for="sel3">Event</label>
-      <select class="form-control" id="sel3">
+      <select class="form-control" id="sel3" name="event">
         <option>xxx</option>
       </select>
       <br>
 
       <label for="sel4">State</label>
-      <select class="form-control" id="sel4">
+      <select class="form-control" id="sel4" name="state">
         <option>MINT</option>
         <option>GOOD</option>
         <option>BAD</option>
