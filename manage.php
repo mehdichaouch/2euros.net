@@ -37,7 +37,9 @@ if(!isset($_SESSION['username'])){
 
     <form role="form" action="./manage.php">
       <?php
-      echo '<pre>' . var_dump($_GET) . '</pre>';
+      echo '<pre>';
+      var_dump($_GET);
+      echo '</pre>';
       echo '<hr>';
       ?>
 
@@ -68,7 +70,7 @@ if(!isset($_SESSION['username'])){
 
           $selectedYear = $_GET['year'];
           while ($row = mysql_fetch_array($result)) {
-            selected = '';
+            $selected = '';
             if ($row['year'] === $selectedYear) {
               $selected = ' selected';
             }
