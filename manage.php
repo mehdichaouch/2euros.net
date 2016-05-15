@@ -108,7 +108,7 @@
             $selected = '';
             if ($row['country'] === $selectedCountry) {
               $selected = ' selected';
-            } 
+            }
 
             //echo "<option value='" . $row['country'] ."'>" . $row['country'] . "</option>";
             echo '<option value="' . $row['country'] .'"'  . $selected . '>'. $row['country'] . '</option>';
