@@ -127,7 +127,37 @@ if(!isset($_SESSION['username'])){
 
           <label for="sel3">Event</label>
           <select class="form-control" id="sel3" name="event">
-            <option>xxx</option>
+
+          <?php
+          // Create & check connection
+          $conn = new mysqli($serverip, $user, $pass, $dbname);
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+
+          // Create connection
+          mysql_connect($serverip, $user, $pass, $dbname);
+          mysql_select_db('2euros');
+          $sql = "SELECT event FROM Coins WHERE year = $selectedYear AND country = $selectedCountry ORDER by event;";
+          $result = mysql_query($sql);
+
+          $selectedEvent = $GET['event'];
+          while ($row = mysql_fetch_array($result)) {
+            $selected = '';
+            if ($row['event'] === $selectedEvent) {
+              $selected = ' selected';
+            } 
+
+            //echo "<option value='" . $row['event'] ."'>" . $row['event'] . "</option>";
+            echo '<option value="' . $row['event'] .'"'  . $selected . '>'. $row['event'] . '</option>';
+          }
+
+          // Close MySQL connection
+          $conn->close();
+
+          ?>       
+
+          
           </select>
           <br>
 
