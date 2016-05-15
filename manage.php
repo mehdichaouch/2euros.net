@@ -103,7 +103,9 @@ if(!isset($_SESSION['username'])){
           $sql = "SELECT DISTINCT country FROM Coins WHERE year = $selectedYear ORDER by country;";
           $result = mysql_query($sql);
 
-          echo '<option value="' . $row['year'] .'"'  . $selected . '>'. $row['year'] . '</option>';
+          while ($row = mysql_fetch_array($result)) {
+            echo "<option value='" . $row['country'] ."'>" . $row['country'] . "</option>";
+          }
 
           // Close MySQL connection
           $conn->close();
