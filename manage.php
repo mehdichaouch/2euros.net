@@ -1,9 +1,9 @@
 <!-- SESSION -->
 <?php
-session_start();
-if(!isset($_SESSION['username'])){
-  header("location:login.php");
-}
+  session_start();
+  if(!isset($_SESSION['username'])){
+    header("location:login.php");
+  }
 ?>
 
 <!-- HEADER -->
@@ -106,7 +106,7 @@ if(!isset($_SESSION['username'])){
           $selectedCountry = $GET['country'];
           while ($row = mysql_fetch_array($result)) {
             $selected = '';
-            if ($row['country'] == $selectedCountry) {
+            if ($row['country'] === $selectedCountry) {
               $selected = ' selected';
             } 
 
