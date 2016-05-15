@@ -45,8 +45,6 @@ if(!isset($_SESSION['username'])){
 
       <div class="form-group">
 
-
-
         <label for="sel1">Year</label>
         <select class="form-control" id="sel1" name="year">
 
@@ -88,6 +86,7 @@ if(!isset($_SESSION['username'])){
         <br>
 
         <?php if ($_GET['year']) { ?>
+
           <label for="sel2">Country</label>
           <select class="form-control" id="sel2" name="country">
             <option>xxx</option>
@@ -107,6 +106,7 @@ if(!isset($_SESSION['username'])){
             <option>BAD</option>
           </select>
           <br>
+          
           <?php } ?>
 
           <button type="submit" class="btn btn-default">Submit</button>
