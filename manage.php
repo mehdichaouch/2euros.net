@@ -138,7 +138,7 @@ if(!isset($_SESSION['username'])){
           // Create connection
           mysql_connect($serverip, $user, $pass, $dbname);
           mysql_select_db('2euros');
-          $sql = "SELECT event FROM Coins WHERE year = $selectedYear AND country = $selectedCountry ORDER by event;";
+          $sql = "SELECT event FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' ORDER by event;";
           $result = mysql_query($sql);
 
           $selectedEvent = $GET['event'];
@@ -155,9 +155,8 @@ if(!isset($_SESSION['username'])){
           // Close MySQL connection
           $conn->close();
 
-          ?>       
+          ?>
 
-          
           </select>
           <br>
 
