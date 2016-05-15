@@ -89,7 +89,28 @@ if(!isset($_SESSION['username'])){
 
           <label for="sel2">Country</label>
           <select class="form-control" id="sel2" name="country">
-            <option>xxx</option>
+
+          <?php
+          // Create & check connection
+          $conn = new mysqli($serverip, $user, $pass, $dbname);
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+
+          // Create connection
+          mysql_connect($serverip, $user, $pass, $dbname);
+          mysql_select_db('2euros');
+          $sql = "SELECT DISTINCT country FROM Coins WHERE year = $selectedYear ORDER by country;";
+          $result = mysql_query($sql);
+
+          echo '<option value="' . $row['year'] .'"'  . $selected . '>'. $row['year'] . '</option>';
+
+          // Close MySQL connection
+          $conn->close();
+
+          ?>
+
+
           </select>
           <br>
 
@@ -106,7 +127,7 @@ if(!isset($_SESSION['username'])){
             <option>BAD</option>
           </select>
           <br>
-          
+
           <?php } ?>
 
           <button type="submit" class="btn btn-default">Submit</button>
