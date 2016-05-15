@@ -123,7 +123,7 @@ if(!isset($_SESSION['username'])){
           </select>
           <br>
 
-          
+          <?php if ($_GET['country']) { ?>
 
           <label for="sel3">Event</label>
           <select class="form-control" id="sel3" name="event">
@@ -167,7 +167,7 @@ if(!isset($_SESSION['username'])){
             <option>BAD</option>
           </select>
           <br>
-          
+          <?php } ?>
 
           <?php } ?>
 
