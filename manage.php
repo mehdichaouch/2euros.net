@@ -106,7 +106,7 @@ if(!isset($_SESSION['username'])){
           $selectedCountry = $GET['country'];
           while ($row = mysql_fetch_array($result)) {
             $selected = '';
-            if ($row['country'] === $selectedCountry) {
+            if ($row['country'] == $selectedCountry) {
               $selected = ' selected';
             } 
 
