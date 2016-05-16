@@ -8,6 +8,7 @@
 
 <!-- HEADER -->
 <html lang="en">
+
 <head>
   <title>2euros.net | Manage</title>
   <meta charset="utf-8">
@@ -26,16 +27,18 @@
 
   <!-- NAVBAR -->
   <?php
-  include 'navbar.php';
+    include 'navbar.php';
   ?>
 
   <!-- CONTENT -->
   <div class="container">
+  
+  <h2>Manage</h2>
+  <p>Add Coin</p>
 
-    <h2>Manage</h2>
-    <p>Add Coin</p>
-
-    <form role="form" action="./manage.php">
+  <form role="form" action="./manage.php">
+      
+      <!-- DEBUG -->
       <?php
       echo '<pre>';
       var_dump($_GET);
@@ -175,13 +178,14 @@
 
           <?php } ?>
 
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Next</button>
 
         </div>
       </form>
 
     </div>
 
-  </body>
+
+</body>
 
 </html>
