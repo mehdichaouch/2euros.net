@@ -38,13 +38,13 @@
 
   <form role="form" action="./manage.php">
       
-      <!-- DEBUG -->
-      <?php
+    <!-- DEBUG -->
+    <?php
       echo '<pre>';
       var_dump($_GET);
       echo '</pre>';
       echo '<hr>';
-      ?>
+    ?>
 
       <div class="form-group">
 
@@ -184,7 +184,6 @@
       </form>
 
     </div>
-
 
 </body>
 
