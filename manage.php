@@ -103,7 +103,7 @@
           // Create connection
           mysql_connect($serverip, $user, $pass, $dbname);
           mysql_select_db('2euros');
-          $sql = "SELECT DISTINCT country FROM Coins WHERE year = $selectedYear ORDER by country;";
+          $sql = "SELECT DISTINCT country FROM Coins WHERE year = '$selectedYear' ORDER by country;";
           $result = mysql_query($sql);
 
           $selectedCountry = $GET['country'];
@@ -141,7 +141,7 @@
           // Create connection
           mysql_connect($serverip, $user, $pass, $dbname);
           mysql_select_db('2euros');
-          $sql = "SELECT event FROM Coins WHERE year = $selectedYear AND country = $selectedCountry ORDER by event;";
+          $sql = "SELECT event FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' ORDER by event;";
           $result = mysql_query($sql);
 
           $selectedEvent = $GET['event'];
