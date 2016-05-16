@@ -106,7 +106,7 @@
           $sql = "SELECT DISTINCT country FROM Coins WHERE year = '$selectedYear' ORDER by country;";
           $result = mysql_query($sql);
 
-          $selectedCountry = $GET['country'];
+          $selectedCountry = $_GET['country'];
           while ($row = mysql_fetch_array($result)) {
             $selected = '';
             if ($row['country'] === $selectedCountry) {
@@ -144,7 +144,7 @@
           $sql = "SELECT event FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' ORDER by event;";
           $result = mysql_query($sql);
 
-          $selectedEvent = $GET['event'];
+          $selectedEvent = $_GET['event'];
           while ($row = mysql_fetch_array($result)) {
             $selected = '';
             if ($row['event'] === $selectedEvent) {
