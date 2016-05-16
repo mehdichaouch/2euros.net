@@ -160,6 +160,8 @@
           </select>
           <br>
 
+          <?php if ($_GET['event']) { ?>
+
           <label for="sel4">State</label>
           <select class="form-control" id="sel4" name="state">
             <option>MINT</option>
@@ -167,6 +169,8 @@
             <option>BAD</option>
           </select>
           <br>
+          <?php } ?>
+
           <?php } ?>
 
           <?php } ?>
