@@ -178,24 +178,8 @@
 
       <?php
         if(isset($_GET['state'])) {
-
-          // Create & check connection
-          $conn = new mysqli($serverip, $user, $pass, $dbname);
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
-          // Create connection
-          mysql_connect($serverip, $user, $pass, $dbname);
-          mysql_select_db('2euros');
-          $sql = "SELECT pic_url FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' AND event = '$selectedEvent';";
-          $result = mysql_query($sql);
-
-          // Close MySQL connection
-          $conn->close();
-
           echo '<label for="sel5">Preview </label><br>';
-          echo '<img src=resources/coins/"' .$result. '" width=50 height=50 class=img-circle></a><br>';
+          echo '<img src=resources/woi.png width=50 height=50 class=img-circle></a><br>';
           echo '<br>';
           echo '<button type="submit" class="btn btn-success">Validate</button>';
         } else {
