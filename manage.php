@@ -195,7 +195,7 @@
           $conn->close();
 
           echo '<label for="sel5">Preview </label><br>';
-          echo "<img src=resources/coins/" .$result. " width=50 height=50 class=img-circle></a><br>";
+          echo '<img src=resources/coins/"' .$result. '" width=50 height=50 class=img-circle></a><br>';
           echo '<br>';
           echo '<button type="submit" class="btn btn-success">Validate</button>';
         } else {
