@@ -174,6 +174,14 @@
 
       <?php } ?>
 
+      <?php
+        if(isset($_GET['state'])) {
+          echo '<button type="submit" class="btn btn-success">Validate</button>';
+        } else {
+          echo '<button type="submit" class="btn btn-default">Next</button>'; 
+        }
+      ?>
+
       <button type="submit" class="btn btn-default">Next</button>
 
     </div>
