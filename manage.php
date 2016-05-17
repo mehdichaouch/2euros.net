@@ -188,7 +188,13 @@
           // Create connection
           mysql_connect($serverip, $user, $pass, $dbname);
           mysql_select_db('2euros');
-          $sql = "SELECT pic_url FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' AND event = '$selectedEvent';";
+          
+          $sql = "SELECT pic_url
+          FROM Coins 
+          WHERE year = '$selectedYear' 
+          AND country = '$selectedCountry' 
+          AND event = '$selectedEvent'";
+
           $result = mysql_query($sql);
 
           var_dump($result);
