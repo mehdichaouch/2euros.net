@@ -196,7 +196,7 @@
           echo '<label for="sel5">Preview </label><br>';
 
           while ($row = mysql_fetch_array($result)) {
-            echo '<img src=resources/"' . $result . '" width=50 height=50 class=img-circle></a><br>';
+            echo '<img src=resources/coins/' . $result . ' width=50 height=50 class=img-circle></a><br>';
           }
 
           // Close MySQL connection
