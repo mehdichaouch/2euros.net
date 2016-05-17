@@ -178,7 +178,7 @@
 
       <?php
         if(isset($_GET['state'])) {
-          $test=woi.png
+          $test=woi.png;
           echo '<label for="sel2">Preview:</label>';
           echo '<img src=resources/coins/" .$test. " width=50 height=50 class=img-circle></a>';
           echo '<button type="submit" class="btn btn-success">Validate</button>';
