@@ -182,8 +182,6 @@
         }
       ?>
 
-      <button type="submit" class="btn btn-default">Next</button>
-
     </div>
   
   </form>
