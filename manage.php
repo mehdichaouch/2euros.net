@@ -211,10 +211,13 @@
       <?php
         if(isset($_GET['state'])) {
           echo '<button type="submit" class="btn btn-default">Cancel</button> ';
+
+          // verify if the coin is owned
           echo '<button type="submit" class="btn btn-success">Add</button> ';
           echo '<button type="submit" class="btn btn-danger">Remove</button> ';
+
         } else {
-          echo '<button type="submit" class="btn btn-info">Next</button>'; 
+          echo '<button type="submit" class="btn btn-default">Next</button>'; 
         }
       ?>
 
