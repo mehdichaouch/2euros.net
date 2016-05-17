@@ -191,7 +191,7 @@
           $sql = "SELECT pic_url FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' AND event = '$selectedEvent';";
           $result = mysql_query($sql);
 
-
+          var_dump($result);
 
           echo '<label for="sel5">Preview </label><br>';
 
