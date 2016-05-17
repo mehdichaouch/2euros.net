@@ -210,7 +210,9 @@
 
       <?php
         if(isset($_GET['state'])) {
-          echo '<button type="submit" class="btn btn-success">Validate</button>';
+          echo '<button type="submit" class="btn btn-default">Cancel</button>';
+          echo '<button type="submit" class="btn btn-success">Add</button>';
+          echo '<button type="submit" class="btn btn-error">Remove</button>';
         } else {
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
         }
