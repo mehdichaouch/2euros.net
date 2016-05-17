@@ -192,8 +192,7 @@
           $sql = "SELECT pic_url
           FROM Coins 
           WHERE year = '$selectedYear' 
-          AND country = '$selectedCountry' 
-          AND event = '$selectedEvent'
+          AND country = '$selectedCountry' AND event = '$selectedEvent'
           ORDER BY pic_url;";
 
           $result = mysql_query($sql);
@@ -203,7 +202,7 @@
           echo '<label for="sel5">Preview </label><br>';
 
           while ($row = mysql_fetch_array($result)) {
-            echo '<img src=resources/coins/' . $result . ' width=50 height=50 class=img-circle></a><br>';
+            echo '<img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a><br>';
           }
 
           // Close MySQL connection
