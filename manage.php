@@ -180,7 +180,7 @@
         if(isset($_GET['state'])) {
           $test=woi.png;
           echo '<label for="sel2">Preview</label>';
-          echo '<img src=resources/" .'$test'. " width=50 height=50 class=img-circle></a>';
+          echo '<img src=resources/" .$test. " width=50 height=50 class=img-circle></a>';
           echo '<button type="submit" class="btn btn-success">Validate</button>';
         } else {
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
