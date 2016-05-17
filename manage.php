@@ -210,7 +210,7 @@
 
       <?php
         if(isset($_GET['state'])) {
-          echo '<a href="./manage.php" class="btn btn-default" role="button">Cancel</button> ';
+          echo '<a href="./manage.php" class="btn btn-default" role="button">Cancel</a> ';
 
           // verify if the coin is owned
           echo '<button type="submit" class="btn btn-success">Add</button> ';
