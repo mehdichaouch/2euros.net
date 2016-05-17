@@ -197,9 +197,7 @@
 
           $result = mysql_query($sql);
 
-          var_dump($result);
-
-          echo '<label for="sel5">Preview </label><br>';
+          echo '<label for="sel5">Preview</label><br>';
 
           while ($row = mysql_fetch_array($result)) {
             echo '<img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a><br>';
