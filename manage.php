@@ -163,6 +163,38 @@
 
       <!-- DROPDOWN 4 -->
       <?php if ($_GET['event']) { ?>
+
+      <?php
+        // Create & check connection
+        $conn = new mysqli($serverip, $user, $pass, $dbname);
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Create connection
+        mysql_connect($serverip, $user, $pass, $dbname);
+        mysql_select_db('2euros');
+        
+        $sql = "SELECT pic_url
+        FROM Coins 
+        WHERE year = '$selectedYear' 
+        AND country = '$selectedCountry' AND event = '$selectedEvent'
+        ORDER BY pic_url;";
+
+        $result = mysql_query($sql);
+
+        echo '<label for="sel5">Preview</label><br>';
+
+        while ($row = mysql_fetch_array($result)) {
+          echo '<img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a><br>';
+        }
+
+        // Close MySQL connection
+        $conn->close();
+
+        echo '<br>';
+      ?>
+
       <label for="sel4">State</label>
       <select class="form-control" id="sel4" name="state">
         <option>MINT</option>
@@ -178,35 +210,6 @@
 
       <?php
         if(isset($_GET['state'])) {
-
-          // Create & check connection
-          $conn = new mysqli($serverip, $user, $pass, $dbname);
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
-          // Create connection
-          mysql_connect($serverip, $user, $pass, $dbname);
-          mysql_select_db('2euros');
-          
-          $sql = "SELECT pic_url
-          FROM Coins 
-          WHERE year = '$selectedYear' 
-          AND country = '$selectedCountry' AND event = '$selectedEvent'
-          ORDER BY pic_url;";
-
-          $result = mysql_query($sql);
-
-          echo '<label for="sel5">Preview</label><br>';
-
-          while ($row = mysql_fetch_array($result)) {
-            echo '<img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a><br>';
-          }
-
-          // Close MySQL connection
-          $conn->close();
-
-          echo '<br>';
           echo '<button type="submit" class="btn btn-success">Validate</button>';
         } else {
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
