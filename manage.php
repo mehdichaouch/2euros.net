@@ -182,7 +182,6 @@
           echo '<label for="sel5">Preview </label><br>';
           echo "<img src=resources/" .$test. " width=50 height=50 class=img-circle></a><br>";
           echo '<br>';
-          echo '<br>';
           echo '<button type="submit" class="btn btn-success">Validate</button>';
         } else {
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
