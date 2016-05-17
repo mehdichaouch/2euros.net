@@ -193,7 +193,8 @@
           FROM Coins 
           WHERE year = '$selectedYear' 
           AND country = '$selectedCountry' 
-          AND event = '$selectedEvent'";
+          AND event = '$selectedEvent'
+          ORDER BY pic_url;";
 
           $result = mysql_query($sql);
 
