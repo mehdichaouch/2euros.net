@@ -178,7 +178,7 @@
 
       <?php
         if(isset($_GET['state'])) {
-          $test=woi.png;
+          $test = "woi.png";
           echo '<label for="sel5">Preview </label>';
           echo "<img src=resources/" .$test. " width=50 height=50 class=img-circle></a><br>";
           echo '<br>';
