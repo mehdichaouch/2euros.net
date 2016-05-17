@@ -46,144 +46,141 @@
       echo '<hr>';
     ?>
 
-      <div class="form-group">
+    <div class="form-group">
 
-        <label for="sel1">Year</label>
-        <select class="form-control" id="sel1" name="year">
+      <!-- DROPDOWN 1 -->
+      <label for="sel1">Year</label>
+      <select class="form-control" id="sel1" name="year">
+      
+      <?php
+        $username = $_SESSION["username"];
 
-          <!-- DROPDOWN 1 -->
-          <?php
-          $username = $_SESSION["username"];
         //Database Credentials
-          include 'conf/db.php';
+        include 'conf/db.php';
 
         // Create & check connection
-          $conn = new mysqli($serverip, $user, $pass, $dbname);
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
+        $conn = new mysqli($serverip, $user, $pass, $dbname);
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
 
         // Create connection
-          mysql_connect($serverip, $user, $pass, $dbname);
-          mysql_select_db('2euros');
-          $sql = "SELECT DISTINCT year FROM Coins";
-          $result = mysql_query($sql);
+        mysql_connect($serverip, $user, $pass, $dbname);
+        mysql_select_db('2euros');
+        $sql = "SELECT DISTINCT year FROM Coins";
+        $result = mysql_query($sql);
 
-          $selectedYear = $_GET['year'];
-          while ($row = mysql_fetch_array($result)) {
-            $selected = '';
-            if ($row['year'] === $selectedYear) {
-              $selected = ' selected';
-            }
-
-            //echo "<option value=\"$row['year']\" $selected>$row['year']</option>";
-            echo '<option value="' . $row['year'] .'"'  . $selected . '>'. $row['year'] . '</option>';
+        $selectedYear = $_GET['year'];
+        while ($row = mysql_fetch_array($result)) {
+          $selected = '';
+          if ($row['year'] === $selectedYear) {
+            $selected = ' selected';
           }
+          echo '<option value="' . $row['year'] .'"'  . $selected . '>'. $row['year'] . '</option>';
+        }
 
         // Close MySQL connection
-          $conn->close();
+        $conn->close();
 
-          ?>
+      ?>
 
-        </select>
-        <br>
+      </select>
+      <br>
 
-        <?php if ($_GET['year']) { ?>
+      <!-- DROPDOWN 2 -->
+      <?php if ($_GET['year']) { ?>
+      <label for="sel2">Country</label>
+      <select class="form-control" id="sel2" name="country">
 
-          <label for="sel2">Country</label>
-          <select class="form-control" id="sel2" name="country">
+      <?php
 
-          <?php
-          // Create & check connection
-          $conn = new mysqli($serverip, $user, $pass, $dbname);
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        // Create & check connection
+        $conn = new mysqli($serverip, $user, $pass, $dbname);
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Create connection
+        mysql_connect($serverip, $user, $pass, $dbname);
+        mysql_select_db('2euros');
+        $sql = "SELECT DISTINCT country FROM Coins WHERE year = '$selectedYear' ORDER by country;";
+        $result = mysql_query($sql);
+
+        $selectedCountry = $_GET['country'];
+        while ($row = mysql_fetch_array($result)) {
+          $selected = '';
+          if ($row['country'] === $selectedCountry) {
+            $selected = ' selected';
           }
+          echo '<option value="' . $row['country'] .'"'  . $selected . '>'. $row['country'] . '</option>';
+        }
 
-          // Create connection
-          mysql_connect($serverip, $user, $pass, $dbname);
-          mysql_select_db('2euros');
-          $sql = "SELECT DISTINCT country FROM Coins WHERE year = '$selectedYear' ORDER by country;";
-          $result = mysql_query($sql);
+        // Close MySQL connection
+        $conn->close();
 
-          $selectedCountry = $_GET['country'];
-          while ($row = mysql_fetch_array($result)) {
-            $selected = '';
-            if ($row['country'] === $selectedCountry) {
-              $selected = ' selected';
-            }
+      ?>
 
-            //echo "<option value='" . $row['country'] ."'>" . $row['country'] . "</option>";
-            echo '<option value="' . $row['country'] .'"'  . $selected . '>'. $row['country'] . '</option>';
-          }
+      </select>
+      <br>
 
-          // Close MySQL connection
-          $conn->close();
+      <!-- DROPDOWN 3 -->
+      <?php if ($_GET['country']) { ?>
+      <label for="sel3">Event</label>
+      <select class="form-control" id="sel3" name="event">
 
-          ?>
+      <?php
 
+        // Create & check connection
+        $conn = new mysqli($serverip, $user, $pass, $dbname);
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
 
-          </select>
-          <br>
+        // Create connection
+        mysql_connect($serverip, $user, $pass, $dbname);
+        mysql_select_db('2euros');
+        $sql = "SELECT event FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' ORDER by event;";
+        $result = mysql_query($sql);
 
-          <?php if ($_GET['country']) { ?>
+        $selectedEvent = $_GET['event'];
+        while ($row = mysql_fetch_array($result)) {
+          $selected = '';
+          if ($row['event'] === $selectedEvent) {
+            $selected = ' selected';
+          } 
+          echo '<option value="' . $row['event'] .'"'  . $selected . '>'. $row['event'] . '</option>';
+        }
 
-          <label for="sel3">Event</label>
-          <select class="form-control" id="sel3" name="event">
+        // Close MySQL connection
+        $conn->close();
 
-          <?php
-          // Create & check connection
-          $conn = new mysqli($serverip, $user, $pass, $dbname);
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
+      ?>
 
-          // Create connection
-          mysql_connect($serverip, $user, $pass, $dbname);
-          mysql_select_db('2euros');
-          $sql = "SELECT event FROM Coins WHERE year = '$selectedYear' AND country = '$selectedCountry' ORDER by event;";
-          $result = mysql_query($sql);
+      </select>
+      <br>
 
-          $selectedEvent = $_GET['event'];
-          while ($row = mysql_fetch_array($result)) {
-            $selected = '';
-            if ($row['event'] === $selectedEvent) {
-              $selected = ' selected';
-            } 
+      <!-- DROPDOWN 4 -->
+      <?php if ($_GET['event']) { ?>
+      <label for="sel4">State</label>
+      <select class="form-control" id="sel4" name="state">
+        <option>MINT</option>
+        <option>GOOD</option>
+        <option>BAD</option>
+      </select>
+      <br>
+      <?php } ?>
 
-            //echo "<option value='" . $row['event'] ."'>" . $row['event'] . "</option>";
-            echo '<option value="' . $row['event'] .'"'  . $selected . '>'. $row['event'] . '</option>';
-          }
+      <?php } ?>
 
-          // Close MySQL connection
-          $conn->close();
+      <?php } ?>
 
-          ?>
-
-          </select>
-          <br>
-
-          <?php if ($_GET['event']) { ?>
-
-          <label for="sel4">State</label>
-          <select class="form-control" id="sel4" name="state">
-            <option>MINT</option>
-            <option>GOOD</option>
-            <option>BAD</option>
-          </select>
-          <br>
-          <?php } ?>
-
-          <?php } ?>
-
-          <?php } ?>
-
-          <button type="submit" class="btn btn-default">Next</button>
-
-        </div>
-      </form>
+      <button type="submit" class="btn btn-default">Next</button>
 
     </div>
+  
+  </form>
+
+  </div>
 
 </body>
 
