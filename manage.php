@@ -265,7 +265,7 @@
 
           if ($data[0] === '0') {
             echo '<form action="" method="POST">';
-            echo '<button type="submit" class="btn btn-success" name="validate" value="on">Add</button> ';
+            echo '<button type="submit" class="btn btn-success" name="validate" value="true">Add</button> ';
             echo '</form>';
           } else {
             echo '<button type="submit" class="btn btn-warning">Update</button> ';
@@ -282,7 +282,7 @@
 
 
         //Actions
-        if(isset($_POST['add'])){
+        if(isset($_POST['validate'])){
           echo '<pre>';
           var_dump($_GET);
           echo '</pre>';
