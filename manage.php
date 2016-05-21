@@ -264,7 +264,7 @@
           $data = mysql_fetch_array($result);
 
           if ($data[0] === '0') {
-            echo '<form action='' method='POST'>';
+            echo '<form action="" method="POST">';
             echo '<button type="submit" class="btn btn-success">Add</button> ';
             echo '</form>';
           } else {
