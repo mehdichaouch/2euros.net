@@ -255,17 +255,12 @@
             AND Coins.country = '$selectedCountry'
             AND Coins.event = '$selectedEvent';";
 
-          $result = mysql_query($sql);
+          $result = $conn->query($sql);
 
-
-
-    
           echo '<pre>';
           var_dump($result);
           echo '</pre>';
           echo '<hr>';
-
-
 
           if ($result == 0) {
             echo '<button type="submit" class="btn btn-success">Add</button> ';
