@@ -39,14 +39,12 @@
   <form role="form" action="./manage.php">
       
     <!-- DEBUG -->
-    <!--
     <?php
       echo '<pre>';
       var_dump($_GET);
       echo '</pre>';
       echo '<hr>';
     ?>
-    -->
 
     <div class="form-group">
 
@@ -214,11 +212,11 @@
         $selectedState = $_GET['state'];
         while ($row = mysql_fetch_array($result)) {
           $selected = '';
-          if ($row['state'] === $selectedState) {
+          if ($row['coin_state'] === $selectedState) {
             $selected = ' selected';
           } 
 
-          echo '<option value="' . $row['state'] .'"'  . $selected . '>'. $row['state'] . '</option>';
+          echo '<option value="' . $row['coin_state'] .'"'  . $selected . '>'. $row['coin_state'] . '</option>';
         }
 
         // Close MySQL connection
