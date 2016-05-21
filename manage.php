@@ -254,7 +254,8 @@
             AND Coins.year = '$selectedYear'
             AND Coins.country = '$selectedCountry'
             AND Coins.event = '$selectedEvent';";
-          $result = mysql_query($sql);
+            
+          $result = $conn->query($sql);
 
 
           var_dump($result);
@@ -264,7 +265,8 @@
             echo '<button type="submit" class="btn btn-success">Add</button> ';
           } else {
             echo '<button type="submit" class="btn btn-danger">Remove</button> ';
-          } 
+          }
+
 
           // Close MySQL connection
           $conn->close();
