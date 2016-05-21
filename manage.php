@@ -237,6 +237,7 @@
 
       <?php
         if(isset($_GET['state'])) {
+          echo '<hr>';
           echo '<a href="./manage.php" class="btn btn-default" role="button">Cancel</a> ';
           echo '<button type="submit" class="btn btn-info">Refresh</button> ';
 
@@ -263,10 +264,8 @@
           $data = mysql_fetch_array($result);
 
           if ($data[0] === '0') {
-            echo '<hr>';
             echo '<button type="submit" class="btn btn-success">Add</button> ';
           } else {
-            echo '<hr>';
             echo '<button type="submit" class="btn btn-warning">Update</button> ';
             echo '<button type="submit" class="btn btn-danger">Remove</button> ';
           }
