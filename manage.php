@@ -265,7 +265,7 @@
 
           if ($data[0] === '0') {
             echo '<form action="" method="POST">';
-            echo '<button type="submit" class="btn btn-success" value="add">Add</button> ';
+            echo '<button type="submit" class="btn btn-success" name="add">Add</button> ';
             echo '</form>';
           } else {
             echo '<button type="submit" class="btn btn-warning">Update</button> ';
