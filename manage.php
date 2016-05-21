@@ -268,8 +268,8 @@
             echo '<button type="submit" class="btn btn-success" name="validate" value="true">Add</button> ';
             echo '</form>';
           } else {
-            echo '<button type="submit" class="btn btn-warning">Update</button> ';
-            echo '<button type="submit" class="btn btn-danger">Remove</button> ';
+            echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
+            echo '<button type="submit" class="btn btn-danger" name="delete" value="true">Remove</button> ';
           }
 
           // Close MySQL connection
@@ -284,6 +284,23 @@
         //Actions
         if(isset($_GET['validate'])){
           echo '<pre>';
+          echo 'validate';
+          var_dump($_GET);
+          echo '</pre>';
+          echo '<hr>';
+        }
+
+        if(isset($_GET['update'])){
+          echo '<pre>';
+          echo 'update';
+          var_dump($_GET);
+          echo '</pre>';
+          echo '<hr>';
+        }
+
+        if(isset($_GET['delete'])){
+          echo '<pre>';
+          echo 'delete';
           var_dump($_GET);
           echo '</pre>';
           echo '<hr>';
