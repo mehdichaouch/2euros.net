@@ -273,6 +273,9 @@
             echo '<button type="submit" class="btn btn-danger">Remove</button> ';
           }
 
+          }
+
+
 
           // Close MySQL connection
           $conn->close();
