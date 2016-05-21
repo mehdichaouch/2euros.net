@@ -259,6 +259,8 @@
 
           echo '<pre>';
           var_dump($result);
+          var_dump($selectedYear);
+          var_dump($selectedCountry);
           echo '</pre>';
           echo '<hr>';
 
