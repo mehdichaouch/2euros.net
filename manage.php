@@ -254,17 +254,22 @@
             AND Coins.year = '$selectedYear'
             AND Coins.country = '$selectedCountry'";
 
-          $result = $sql->fetch();
+          $result = mysql_query($sql);
+
+          $data = mysql_fetch_array($result);
+
+          echo $data['total'];
 
           echo '<pre>';
           var_dump($result);
+          var_dump($data);
           var_dump($selectedYear);
           var_dump($selectedCountry);
           echo '</pre>';
           echo '<hr>';
 
 
-          while ($row = mysql_fetch_array($result)) {
+          
 
           if ($row['count'] == 0) {
             echo '<button type="submit" class="btn btn-success">Add</button> ';
