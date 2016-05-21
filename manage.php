@@ -260,6 +260,7 @@
 
           echo '<pre>';
           var_dump($data);
+          var_dump($username);
           echo '</pre>';
           echo '<hr>';
 
