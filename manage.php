@@ -255,7 +255,7 @@
             AND Coins.country = '$selectedCountry'
             AND Coins.event = '$selectedEvent';";
 
-          $result = $conn->query($sql);
+          $result = mysq_query($sql);
 
           echo '<pre>';
           var_dump($result);
@@ -264,7 +264,10 @@
           echo '</pre>';
           echo '<hr>';
 
-          if ($result == 0) {
+
+          while ($row = mysql_fetch_array($result)) {
+
+          if ($row['field_count'] == 0) {
             echo '<button type="submit" class="btn btn-success">Add</button> ';
           } else {
             echo '<button type="submit" class="btn btn-danger">Remove</button> ';
