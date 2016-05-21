@@ -239,7 +239,7 @@
         if(isset($_GET['state'])) {
           echo '<hr>';
           echo '<a href="./manage.php" class="btn btn-default" role="button">Cancel</a> ';
-          echo '<button type="submit" class="btn btn-info">Refresh</button> ';
+          echo '<button type="submit" class="btn btn-default">Refresh</button> ';
 
           // verify if the coin is owned
 
