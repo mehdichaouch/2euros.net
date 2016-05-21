@@ -279,6 +279,16 @@
           echo '<hr>';
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
         }
+
+
+        //Actions
+        if(isset($_POST['add'])){
+          echo '<pre>';
+          var_dump($_GET);
+          echo '</pre>';
+          echo '<hr>';
+        }
+
       ?>
 
     </div>
