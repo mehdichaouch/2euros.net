@@ -226,6 +226,7 @@
 
       </select>
       <br>
+
       <?php } ?>
 
       <?php } ?>
@@ -237,8 +238,34 @@
           echo '<a href="./manage.php" class="btn btn-default" role="button">Cancel</a> ';
 
           // verify if the coin is owned
-          echo '<button type="submit" class="btn btn-success">Add</button> ';
-          echo '<button type="submit" class="btn btn-danger">Remove</button> ';
+
+          // Create & check connection
+          $conn = new mysqli($serverip, $user, $pass, $dbname);
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+
+          // Create connection
+          mysql_connect($serverip, $user, $pass, $dbname);
+          mysql_select_db('2euros');
+          $sql = "SELECT COUNT(*) FROM Users, Collections, Coins
+            WHERE Collections.id_users = Users.id
+            AND Collections.id_coins = Coins.id AND Users.login like 'klems'
+            AND Coins.year = '2009'
+            AND Coins.country = 'BELGIUM'
+            AND Coins.event = '200th Birthday of Louis Braille';";
+          $result = mysql_query($sql);
+
+
+          if ($result == 0) {
+            echo '<button type="submit" class="btn btn-success">Add</button> ';
+          else {
+            echo '<button type="submit" class="btn btn-danger">Remove</button> ';
+              } 
+          } 
+
+          // Close MySQL connection
+          $conn->close();
 
         } else {
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
