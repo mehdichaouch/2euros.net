@@ -262,6 +262,7 @@
           if ($data[0] === '0') {
             echo '<button type="submit" class="btn btn-success">Add</button> ';
           } else {
+            echo '<button type="submit" class="btn btn-warning">Update</button> ';
             echo '<button type="submit" class="btn btn-danger">Remove</button> ';
           }
 
