@@ -282,7 +282,7 @@
 
 
         //Actions
-        if(isset($_POST['validate'])){
+        if(isset($_GET['validate'])){
           echo '<pre>';
           var_dump($_GET);
           echo '</pre>';
