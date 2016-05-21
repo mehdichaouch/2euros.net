@@ -273,7 +273,7 @@
           $conn->close();
 
         } else {
-          echo '<hr>'
+          echo '<hr>';
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
         }
       ?>
