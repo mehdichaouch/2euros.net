@@ -197,9 +197,35 @@
 
       <label for="sel4">State</label>
       <select class="form-control" id="sel4" name="state">
-        <option>MINT</option>
-        <option>GOOD</option>
-        <option>BAD</option>
+
+        <?php
+        // Create & check connection
+        $conn = new mysqli($serverip, $user, $pass, $dbname);
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Create connection
+        mysql_connect($serverip, $user, $pass, $dbname);
+        mysql_select_db('2euros');
+        $sql = "SELECT DISTINCT coin_state FROM Collections;";
+        $result = mysql_query($sql);
+
+        $selectedEvent = $_GET['state'];
+        while ($row = mysql_fetch_array($result)) {
+          $selected = '';
+          if ($row['state'] === $selectedstate) {
+            $selected = ' selected';
+          } 
+
+          echo '<option value="' . $row['state'] .'"'  . $selected . '>'. $row['state'] . '</option>';
+        }
+
+        // Close MySQL connection
+        $conn->close();
+
+        ?>
+
       </select>
       <br>
       <?php } ?>
