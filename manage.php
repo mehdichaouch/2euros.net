@@ -34,7 +34,7 @@
   <div class="container">
   
   <h2>Manage</h2>
-  <p>Add Coin</p>
+  <p>You can manage your coins collection on this page</p>
 
   <form role="form" action="./manage.php">
       
@@ -273,6 +273,7 @@
           $conn->close();
 
         } else {
+          echo '<hr>'
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
         }
       ?>
