@@ -255,7 +255,7 @@
             AND Coins.country = '$selectedCountry'
             AND Coins.event = '$selectedEvent';";
 
-          $result = $conn->query($sql);
+          $result = mysql_query($sql);
 
 
 
