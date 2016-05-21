@@ -257,6 +257,9 @@
           $result = mysql_query($sql);
 
 
+          var_dump($result);
+
+
           if ($result == 0) {
             echo '<button type="submit" class="btn btn-success">Add</button> ';
           } else {
