@@ -254,7 +254,7 @@
             AND Coins.year = '$selectedYear'
             AND Coins.country = '$selectedCountry'";
 
-          $result = mysql_query($sql);
+          $result = $sql->fetch();
 
           echo '<pre>';
           var_dump($result);
@@ -266,7 +266,7 @@
 
           while ($row = mysql_fetch_array($result)) {
 
-          if ($row['field_count'] == 0) {
+          if ($row['count'] == 0) {
             echo '<button type="submit" class="btn btn-success">Add</button> ';
           } else {
             echo '<button type="submit" class="btn btn-danger">Remove</button> ';
