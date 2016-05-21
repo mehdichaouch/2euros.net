@@ -252,8 +252,7 @@
             WHERE Collections.id_users = Users.id
             AND Collections.id_coins = Coins.id AND Users.login like '$username'
             AND Coins.year = '$selectedYear'
-            AND Coins.country = '$selectedCountry'
-            AND Coins.event = '$selectedEvent';";
+            AND Coins.country = '$selectedCountry'";
 
           $result = mysql_query($sql);
 
