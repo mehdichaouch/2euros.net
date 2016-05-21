@@ -246,6 +246,7 @@
           }
 
           // Create connection
+          $username = $_SESSION["username"];
           mysql_connect($serverip, $user, $pass, $dbname);
           mysql_select_db('2euros');
           $sql = "SELECT COUNT(*) FROM Users, Collections, Coins
