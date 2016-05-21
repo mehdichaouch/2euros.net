@@ -257,12 +257,12 @@
           $result = mysql_query($sql);
 
 
-          if ($result == 0) {
-            echo '<button type="submit" class="btn btn-success">Add</button> ';
-          else {
-            echo '<button type="submit" class="btn btn-danger">Remove</button> ';
-              } 
-          } 
+          // if ($result == 0) {
+          //   echo '<button type="submit" class="btn btn-success">Add</button> ';
+          // else {
+          //   echo '<button type="submit" class="btn btn-danger">Remove</button> ';
+          //     } 
+          // } 
 
           // Close MySQL connection
           $conn->close();
