@@ -250,9 +250,7 @@
           mysql_select_db('2euros');
           $sql = "SELECT COUNT(*) FROM Users, Collections, Coins
             WHERE Collections.id_users = Users.id
-            AND Collections.id_coins = Coins.id AND Users.login like '$username'
-            AND Coins.year = '$selectedYear'
-            AND Coins.country = '$selectedCountry'";
+            AND Collections.id_coins = Coins.id AND Users.login like '$username'";
 
           $result = mysql_query($sql);
 
