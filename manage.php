@@ -211,10 +211,10 @@
         $sql = "SELECT DISTINCT coin_state FROM Collections;";
         $result = mysql_query($sql);
 
-        $selectedEvent = $_GET['state'];
+        $selectedState = $_GET['state'];
         while ($row = mysql_fetch_array($result)) {
           $selected = '';
-          if ($row['state'] === $selectedstate) {
+          if ($row['state'] === $selectedState) {
             $selected = ' selected';
           } 
 
