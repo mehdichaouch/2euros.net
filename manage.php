@@ -239,7 +239,6 @@
 
       <?php
         if(isset($_GET['state'])) {
-          echo '<hr>';
           echo '<a href="./manage.php" class="btn btn-default" role="button">Cancel</a> ';
           echo '<button type="submit" class="btn btn-default">Refresh</button> ';
 
@@ -278,7 +277,6 @@
           $conn->close();
 
         } else {
-          echo '<hr>';
           echo '<button type="submit" class="btn btn-default">Next</button>'; 
         }
 
