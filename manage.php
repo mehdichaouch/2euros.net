@@ -298,14 +298,16 @@
 
           $sql = "SELECT Users.id FROM Users WHERE Users.login = '$username';";
           $result = mysql_query($sql);
-          $username_id = mysql_fetch_array($result);
+          $username = mysql_fetch_array($result);
+          $username_id = $username[0];
 
           $sql = "SELECT Coins.id FROM Coins 
           WHERE Coins.year = '$selectedYear'
           AND Coins.country = '$selectedCountry'
           AND Coins.event = '$selectedEvent';";
           $result = mysql_query($sql);
-          $coin_id = mysql_fetch_array($result);
+          $coin = mysql_fetch_array($result);
+          $coin_id = $coin[0];
 
           $sql = "INSERT INTO 2euros.Collections (id, id_users, id_coins, coin_state)
           VALUES ('NULL', '$username_id', '$coin_id', '$selectedState')";
