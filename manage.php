@@ -186,7 +186,9 @@
         echo '<label for="sel5">Preview</label><br>';
 
         while ($row = mysql_fetch_array($result)) {
-          echo '<img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a><br>';
+          echo '<div class="panel panel-default">';
+          echo '<div class="panel-body"><img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a><br></div>';
+          echo '</div>';
         }
 
         // Close MySQL connection
