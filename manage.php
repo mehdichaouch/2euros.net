@@ -358,6 +358,13 @@
           $collection = mysql_fetch_array($result);
           $collection_id = $collection[0];
 
+          echo '<pre>';
+          echo 'update';
+          var_dump($collection);
+          var_dump($collection_id);
+          echo '</pre>';
+          echo '<hr>';
+
           // Create connection
           $conn = new mysqli($serverip, $user, $pass, $dbname);
           // Check connection
@@ -367,6 +374,7 @@
 
           echo '<pre>';
           echo 'update';
+          var_dump($collection);
           var_dump($collection_id);
           echo '</pre>';
           echo '<hr>';
