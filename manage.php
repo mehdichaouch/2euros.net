@@ -272,11 +272,10 @@
             }
             echo '<br>';
           } else {
+            echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
             if(isset($_GET['delete'])){
-              echo '<button type="submit" class="btn btn-warning disabled" name="update" value="true">Update</button> ';
               echo '<button type="submit" class="btn btn-danger disabled" name="delete" value="true">Remove</button> ';
             } else {
-              echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
               echo '<button type="submit" class="btn btn-danger" name="delete" value="true">Remove</button> ';
             }
             echo '<br>';
