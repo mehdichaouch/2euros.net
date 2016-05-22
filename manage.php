@@ -331,11 +331,58 @@
         }
 
         if(isset($_GET['delete'])){
-          echo '<pre>';
-          echo 'delete';
-          var_dump($_GET);
+
+          // Create connection
+          $username = $_SESSION["username"];
+          mysql_connect($serverip, $user, $pass, $dbname);
+          mysql_select_db('2euros');
+
+          $sql = "SELECT Users.id FROM Users WHERE Users.login = '$username';";
+          $result = mysql_query($sql);
+          $username = mysql_fetch_array($result);
+          $username_id = $username[0];
+
+          $sql = "SELECT Coins.id FROM Coins 
+          WHERE Coins.year = '$selectedYear'
+          AND Coins.country = '$selectedCountry'
+          AND Coins.event = '$selectedEvent';";
+          $result = mysql_query($sql);
+          $coin = mysql_fetch_array($result);
+          $coin_id = $coin[0];
+
+          $sql = "SELECT Collections.id FROM Users, Collections
+          WHERE Collections.id_users = Users.id
+          AND Collections.id_coins = '$coin_id'
+          AND Users.login like '$username'";
+          $result = mysql_query($sql);
+          $collection = mysql_fetch_array($result);
+          $collection_id = $collection[0];
+
+/*          echo '<pre>';
+          echo 'update';
+          var_dump($username_id);
+          var_dump($coin_id);
+          var_dump($collection_id);
           echo '</pre>';
-          echo '<hr>';
+          echo '<hr>';*/
+
+          // Create connection
+          $conn = new mysqli($serverip, $user, $pass, $dbname);
+          // Check connection
+          if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+          } 
+
+          $sql = "DELETE FROM Collections WHERE id='$collection_id'";
+
+          if ($conn->query($sql) === TRUE) {
+              echo "Record deleted successfully";
+          } else {
+              echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+
+          $conn->close();
+
         }
 
       ?>
