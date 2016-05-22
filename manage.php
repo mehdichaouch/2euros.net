@@ -284,14 +284,6 @@
         //Actions
         if(isset($_GET['validate'])){
 
-          echo '<br>';
-          echo '<pre>';
-          echo 'validate';
-          var_dump($_GET);
-          echo '</pre>';
-          echo '<hr>';
-          echo '<br>';
-
           // Create connection
           $username = $_SESSION["username"];
           mysql_connect($serverip, $user, $pass, $dbname);
@@ -309,15 +301,6 @@
           $result = mysql_query($sql);
           $coin = mysql_fetch_array($result);
           $coin_id = $coin[0];
-
-          echo '<br>';
-          echo '<pre>';
-          echo 'validate';
-          var_dump($username);
-          var_dump($coin);
-          echo '</pre>';
-          echo '<hr>';
-          echo '<br>';
 
           // Create connection
           $conn = new mysqli($serverip, $user, $pass, $dbname);
