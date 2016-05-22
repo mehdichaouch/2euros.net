@@ -265,12 +265,12 @@
           $data = mysql_fetch_array($result);
 
           if ($data[0] === '0') {
-            echo '<form action="" method="POST">';
             echo '<button type="submit" class="btn btn-success" name="validate" value="true">Add</button> ';
-            echo '</form>';
+            echo '<br>';
           } else {
             echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
             echo '<button type="submit" class="btn btn-danger" name="delete" value="true">Remove</button> ';
+            echo '<br>';
           }
 
           // Close MySQL connection
@@ -316,7 +316,7 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>Success!</strong>Record Deleted Successfully';
+            echo '<strong>Success!</strong>Coin : $selectedYear | $selectedCountry | $selectedEvent added to collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -417,7 +417,7 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>Success!</strong>Record Deleted Successfully';
+            echo '<strong>Success!</strong>Coin : $selectedYear | $selectedCountry | $selectedEvent removed to collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
