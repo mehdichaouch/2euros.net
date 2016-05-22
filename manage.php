@@ -358,20 +358,18 @@
           $collection = mysql_fetch_array($result);
           $collection_id = $collection[0];
 
-/*          echo '<pre>';
-          echo 'update';
-          var_dump($username_id);
-          var_dump($coin_id);
-          var_dump($collection_id);
-          echo '</pre>';
-          echo '<hr>';*/
-
           // Create connection
           $conn = new mysqli($serverip, $user, $pass, $dbname);
           // Check connection
           if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
           } 
+
+          echo '<pre>';
+          echo 'update';
+          var_dump($collection_id);
+          echo '</pre>';
+          echo '<hr>';
 
           $sql = "DELETE FROM Collections WHERE Collections.id='$collection_id'";
 
