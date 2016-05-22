@@ -269,7 +269,8 @@
             echo '</form>';
           } else {
             echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
-            echo '<button type="submit" class="btn btn-danger" name="delete" value="true">Remove</button> ';
+            //echo '<button type="submit" class="btn btn-danger" name="delete" value="true">Remove</button> ';
+            echo '<a href="./manage.php" class="btn btn-danger" role="button" type="submit" name="delete" value="true">Remove</a>';
           }
 
           // Close MySQL connection
