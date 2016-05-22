@@ -319,8 +319,15 @@
           echo '<hr>';
           echo '<br>';
 
+          // Create connection
+          $conn = new mysqli($serverip, $user, $pass, $dbname);
+          // Check connection
+          if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+          } 
+
           $sql = "INSERT INTO Collections (id, id_users, id_coins, coin_state)
-          VALUES ('NULL', '$username_id', '$coin_id', '$selectedState')";
+          VALUES ('NULL', '$username_id', '$coin_id', '$selectedState');";
 
           if ($conn->query($sql) === TRUE) {
               echo "New record created successfully";
