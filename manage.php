@@ -316,7 +316,7 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>Success!</strong>Coin : "' . $selectedYear . '" | $selectedCountry | $selectedEvent added to collection';
+            echo '<strong>Success : </strong>Coin ' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '<strong>added</strong> to collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -417,7 +417,7 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>Success!</strong>Coin : "' . $selectedYear . '" | $selectedCountry | $selectedEvent removed to collection';
+            echo '<strong>Success : </strong>Coin ' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '<strong>removed</strong> from collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
