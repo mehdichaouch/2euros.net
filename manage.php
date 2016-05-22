@@ -265,7 +265,13 @@
           $data = mysql_fetch_array($result);
 
           if ($data[0] === '0') {
-            echo '<button type="submit" class="btn btn-success" name="validate" value="true">Add</button> ';
+
+            if(isset($_GET['validate'])){
+              echo '<button type="submit" class="btn btn-success disabled" name="validate" value="true">Add</button> ';
+            } else {
+              echo '<button type="submit" class="btn btn-success" name="validate" value="true">Add</button> ';
+            }
+
             echo '<br>';
           } else {
             echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
