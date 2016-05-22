@@ -283,11 +283,41 @@
 
         //Actions
         if(isset($_GET['validate'])){
+          echo '<br>';
           echo '<pre>';
           echo 'validate';
           var_dump($_GET);
           echo '</pre>';
           echo '<hr>';
+          echo '<br>';
+
+          // Create connection
+          $username = $_SESSION["username"];
+          mysql_connect($serverip, $user, $pass, $dbname);
+          mysql_select_db('2euros');
+
+          $sql = "SELECT Users.id FROM Users WHERE Users.login = '$username';";
+          $result = mysql_query($sql);
+          $username_id = mysql_fetch_array($result);
+
+          $sql = "SELECT Coins.id FROM Coins 
+          WHERE Coins.year = '$selectedYear'
+          AND Coins.country = '$selectedCountry'
+          AND Coins.event = '$selectedEvent';";
+          $result = mysql_query($sql);
+          $coin_id = mysql_fetch_array($result);
+
+          $sql = "INSERT INTO 2euros.Collections (id, id_users, id_coins, coin_state)
+          VALUES ('NULL', '$username_id', '$coin_id', '$selectedState')";
+
+          if ($conn->query($sql) === TRUE) {
+              echo "New record created successfully";
+          } else {
+              echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+
+          $conn->close();
+
         }
 
         if(isset($_GET['update'])){
