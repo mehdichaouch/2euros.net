@@ -318,9 +318,9 @@
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
             echo '<strong>SUCCESS</strong>';
             echo '<br>';
-            echo 'coin <strong>' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '<strong>';
+            echo 'coin <strong>' . $selectedYear . ' - ' . $selectedCountry . ' - ' . $selectedEvent . '<strong>';
             echo '<br>';
-            echo 'status : <strong>ADDED</strong> to your collection';
+            echo 'status <strong>ADDED</strong> to your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -376,9 +376,9 @@
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
             echo '<strong>SUCCESS</strong>';
             echo '<br>';
-            echo 'coin <strong>' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '</strong>';
+            echo 'coin <strong>' . $selectedYear . ' - ' . $selectedCountry . ' - ' . $selectedEvent . '</strong>';
             echo '<br>';
-            echo 'status : <strong>UPDATED</strong> to (' . $selectedState . ') within your collection';
+            echo 'status <strong>UPDATED</strong> to (' . $selectedState . ') within your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -431,9 +431,9 @@
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
             echo '<strong>SUCCESS</strong>';
             echo '<br>';
-            echo 'coin :<strong>' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '</strong>';
+            echo 'coin <strong>' . $selectedYear . ' - ' . $selectedCountry . ' - ' . $selectedEvent . '</strong>';
             echo '<br>';
-            echo 'status :<strong>REMOVED</strong> from your collection';
+            echo 'status <strong>REMOVED</strong> from your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
