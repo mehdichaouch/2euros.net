@@ -323,11 +323,53 @@
         }
 
         if(isset($_GET['update'])){
-          echo '<pre>';
-          echo 'update';
-          var_dump($_GET);
-          echo '</pre>';
-          echo '<hr>';
+
+          // Create connection
+          $username = $_SESSION["username"];
+          mysql_connect($serverip, $user, $pass, $dbname);
+          mysql_select_db('2euros');
+
+          $sql = "SELECT Users.id FROM Users WHERE Users.login = '$username';";
+          $result = mysql_query($sql);
+          $coin_owner = mysql_fetch_array($result);
+          $coin_owner_id = $coin_owner[0];
+
+          $sql = "SELECT Coins.id FROM Coins 
+          WHERE Coins.year = '$selectedYear'
+          AND Coins.country = '$selectedCountry'
+          AND Coins.event = '$selectedEvent';";
+          $result = mysql_query($sql);
+          $coin = mysql_fetch_array($result);
+          $coin_id = $coin[0];
+
+          $sql = "SELECT Collections.id FROM Users, Collections
+          WHERE Collections.id_users = Users.id
+          AND Collections.id_coins = '$coin_id'
+          AND Users.login like '$username'";
+          $result = mysql_query($sql);
+          $collection = mysql_fetch_array($result);
+          $collection_id = $collection[0];
+
+          // Create connection
+          $conn = new mysqli($serverip, $user, $pass, $dbname);
+          // Check connection
+          if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+          } 
+
+          $sql = "DELETE FROM Collections WHERE Collections.id='$collection_id'";
+
+          $sql = "UPDATE Collections SET Collections.coin_state='$selectedState'
+          WHERE Collections.id='$collection_id'";
+
+          if ($conn->query($sql) === TRUE) {
+              echo "Record update successfully";
+          } else {
+              echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+
+          $conn->close();
+
         }
 
         if(isset($_GET['delete'])){
@@ -358,34 +400,12 @@
           $collection = mysql_fetch_array($result);
           $collection_id = $collection[0];
 
-          echo '<pre>';
-          echo 'update';
-          var_dump($username);
-          var_dump($username_id);          
-          var_dump($coin);
-          var_dump($coin_id);
-          var_dump($collection);
-          var_dump($collection_id);
-          echo '</pre>';
-          echo '<hr>';
-
           // Create connection
           $conn = new mysqli($serverip, $user, $pass, $dbname);
           // Check connection
           if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
           } 
-
-          echo '<pre>';
-          echo 'update';
-          var_dump($username);
-          var_dump($username_id);          
-          var_dump($coin);
-          var_dump($coin_id);
-          var_dump($collection);
-          var_dump($collection_id);
-          echo '</pre>';
-          echo '<hr>';
 
           $sql = "DELETE FROM Collections WHERE Collections.id='$collection_id'";
 
