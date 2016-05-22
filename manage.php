@@ -316,7 +316,7 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>Success - </strong>Coin : ' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ' <strong>added</strong> to your collection';
+            echo '<strong>SUCCESS - </strong>Coin (' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ') <strong>ADDED</strong> to your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -367,7 +367,11 @@
           WHERE Collections.id='$collection_id'";
 
           if ($conn->query($sql) === TRUE) {
-              echo "Record update successfully";
+            echo '<br>';
+            echo '<div class="alert alert-success fade in">';
+            echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+            echo '<strong>SUCCESS - </strong>Coin (' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ') <strong>UPDATED</strong> to (' . $selectedState . ') within your collection';
+            echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
           }
@@ -417,7 +421,7 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>Success - </strong>Coin : ' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ' <strong>removed</strong> from your collection';
+            echo '<strong>SUCCESS - </strong>Coin (' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ') <strong>REMOVED</strong> from your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
