@@ -373,7 +373,7 @@
               die("Connection failed: " . $conn->connect_error);
           } 
 
-          $sql = "DELETE FROM Collections WHERE id='$collection_id'";
+          $sql = "DELETE FROM Collections WHERE Collections.id='$collection_id'";
 
           if ($conn->query($sql) === TRUE) {
               echo "Record deleted successfully";
