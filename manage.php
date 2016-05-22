@@ -339,8 +339,8 @@
 
           $sql = "SELECT Users.id FROM Users WHERE Users.login = '$username';";
           $result = mysql_query($sql);
-          $username = mysql_fetch_array($result);
-          $username_id = $username[0];
+          $coin_owner = mysql_fetch_array($result);
+          $coin_owner_id = $coin_owner[0];
 
           $sql = "SELECT Coins.id FROM Coins 
           WHERE Coins.year = '$selectedYear'
