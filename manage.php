@@ -378,7 +378,7 @@
             echo '<br>';
             echo 'coin <strong>' . $selectedYear . ' - ' . $selectedCountry . ' - ' . $selectedEvent . '</strong>';
             echo '<br>';
-            echo 'status <strong>UPDATED</strong> to (' . $selectedState . ') within your collection';
+            echo 'status <strong>UPDATED</strong> to <strong>' . $selectedState . '</strong> within your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
