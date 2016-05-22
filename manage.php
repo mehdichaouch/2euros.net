@@ -283,6 +283,7 @@
 
         //Actions
         if(isset($_GET['validate'])){
+
           echo '<br>';
           echo '<pre>';
           echo 'validate';
@@ -308,6 +309,15 @@
           $result = mysql_query($sql);
           $coin = mysql_fetch_array($result);
           $coin_id = $coin[0];
+
+          echo '<br>';
+          echo '<pre>';
+          echo 'validate';
+          var_dump($username);
+          var_dump($coin);
+          echo '</pre>';
+          echo '<hr>';
+          echo '<br>';
 
           $sql = "INSERT INTO 2euros.Collections (id, id_users, id_coins, coin_state)
           VALUES ('NULL', '$username_id', '$coin_id', '$selectedState')";
