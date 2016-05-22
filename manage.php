@@ -410,7 +410,10 @@
           $sql = "DELETE FROM Collections WHERE Collections.id='$collection_id'";
 
           if ($conn->query($sql) === TRUE) {
-              echo "Record deleted successfully";
+              echo '<div class="alert alert-success">';
+                echo '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+                echo '<strong>Success!</strong> Record Deleted Successfully';
+              echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
           }
