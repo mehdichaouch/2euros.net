@@ -360,6 +360,10 @@
 
           echo '<pre>';
           echo 'update';
+          var_dump($username);
+          var_dump($username_id);          
+          var_dump($coin);
+          var_dump($coin_id);
           var_dump($collection);
           var_dump($collection_id);
           echo '</pre>';
@@ -374,6 +378,10 @@
 
           echo '<pre>';
           echo 'update';
+          var_dump($username);
+          var_dump($username_id);          
+          var_dump($coin);
+          var_dump($coin_id);
           var_dump($collection);
           var_dump($collection_id);
           echo '</pre>';
