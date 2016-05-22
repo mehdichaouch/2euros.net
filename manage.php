@@ -319,7 +319,7 @@
           echo '<hr>';
           echo '<br>';
 
-          $sql = "INSERT INTO 2euros.Collections (id, id_users, id_coins, coin_state)
+          $sql = "INSERT INTO Collections (id, id_users, id_coins, coin_state)
           VALUES ('NULL', '$username_id', '$coin_id', '$selectedState')";
 
           if ($conn->query($sql) === TRUE) {
