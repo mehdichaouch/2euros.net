@@ -265,17 +265,20 @@
           $data = mysql_fetch_array($result);
 
           if ($data[0] === '0') {
-
             if(isset($_GET['validate'])){
               echo '<button type="submit" class="btn btn-success disabled" name="validate" value="true">Add</button> ';
             } else {
               echo '<button type="submit" class="btn btn-success" name="validate" value="true">Add</button> ';
             }
-
             echo '<br>';
           } else {
-            echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
-            echo '<button type="submit" class="btn btn-danger" name="delete" value="true">Remove</button> ';
+            if(isset($_GET['delete'])){
+              echo '<button type="submit" class="btn btn-warning disabled" name="update" value="true">Update</button> ';
+              echo '<button type="submit" class="btn btn-danger disabled" name="delete" value="true">Remove</button> ';
+            } else {
+              echo '<button type="submit" class="btn btn-warning" name="update" value="true">Update</button> ';
+              echo '<button type="submit" class="btn btn-danger" name="delete" value="true">Remove</button> ';
+            }
             echo '<br>';
           }
 
