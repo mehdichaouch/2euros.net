@@ -316,7 +316,11 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>SUCCESS - </strong>Coin (' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ') <strong>ADDED</strong> to your collection';
+            echo '<strong>SUCCESS</strong>';
+            echo '<br>';
+            echo 'coin <strong>' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '<strong>';
+            echo '<br>';
+            echo 'status : <strong>ADDED</strong> to your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -370,7 +374,11 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>SUCCESS - </strong>Coin (' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ') <strong>UPDATED</strong> to (' . $selectedState . ') within your collection';
+            echo '<strong>SUCCESS</strong>';
+            echo '<br>';
+            echo 'coin <strong>' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '</strong>';
+            echo '<br>';
+            echo 'status : <strong>UPDATED</strong> to (' . $selectedState . ') within your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -421,7 +429,11 @@
             echo '<br>';
             echo '<div class="alert alert-success fade in">';
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-            echo '<strong>SUCCESS - </strong>Coin (' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . ') <strong>REMOVED</strong> from your collection';
+            echo '<strong>SUCCESS</strong>';
+            echo '<br>';
+            echo 'coin :<strong>' . $selectedYear . ' | ' . $selectedCountry . ' | ' . $selectedEvent . '</strong>';
+            echo '<br>';
+            echo 'status :<strong>REMOVED</strong> from your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
