@@ -11,7 +11,6 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="http://2euros.net">Home</a></li>
         <li><a href="http://2euros.net/browse.php">Browse</a></li>
           
         <?php
