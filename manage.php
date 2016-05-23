@@ -441,7 +441,7 @@
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
             echo '<strong>SUCCESS</strong>';
             echo '<br>';
-            echo 'The coin from <strong>' . $selectedCountry . '</strong> year <strong>' . $selectedYear . '</strong> event "<strong>' . $selectedEvent . '</strong>" has been <strong>REMOVED</strong> from your collection';
+            echo 'The coin from ' . $selectedCountry . ' year ' . $selectedYear . ' event "' . $selectedEvent . '" has been REMOVED from your collection';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
