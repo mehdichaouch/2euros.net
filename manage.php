@@ -331,7 +331,13 @@
             echo 'The coin from ' . $selectedCountry . ' year ' . $selectedYear . ' event "' . $selectedEvent . '" has been ADDED with state ' . $selectedState . '';
             echo '</div>';
           } else {
-              echo "Error: " . $sql . "<br>" . $conn->error;
+            echo '<br>';
+            echo '<div class="alert alert-danger fade in">';
+            echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+            echo '<strong>ERROR</strong>';
+            echo '<br>';
+            echo "Output : " . $sql . "<br>" . $conn->error;
+            echo '</div>';
           }
 
           $conn->close();
