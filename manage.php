@@ -386,7 +386,7 @@
             echo '<a href="./manage.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
             echo '<strong>SUCCESS</strong>';
             echo '<br>';
-            echo 'The coin from' . $selectedCountry . ' year ' . $selectedYear . ' event "' . $selectedEvent . '" has been UPDATED within your collection with state ' . $selectedState . '';
+            echo 'The coin from ' . $selectedCountry . ' year ' . $selectedYear . ' event "' . $selectedEvent . '" has been UPDATED with state ' . $selectedState . '';
             echo '</div>';
           } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
