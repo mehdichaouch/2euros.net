@@ -53,7 +53,7 @@
     }
     // DB request
     $sql = "SELECT * FROM `Coins`
-            ORDER BY Coins.year";
+            ORDER BY Coins.year, Coin.country";
     $result = $conn->query($sql);
     // Results
     if ($result->num_rows > 0) {
