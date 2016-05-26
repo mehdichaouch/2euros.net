@@ -83,7 +83,7 @@
 
 
     $value_years = (int)$total_years;
-    $percentage = 100/$value_years;
+    $percentage = (100/$value_years);
 
     echo '<pre>';
     var_dump($percentage);
