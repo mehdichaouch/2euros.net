@@ -84,7 +84,13 @@
     $user_perc = round((int)$total_user_years*$percentage);
 
     echo '<div class="progress">';
-    echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
+
+    if ($user_perc >= 100) {
+      echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
+    } else {
+      echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
+    }
+
     echo '' . $user_perc . '% Complete';
     echo '</div>';
     echo '</div>';
