@@ -67,18 +67,20 @@
 
     $sql_years = "SELECT COUNT(*) FROM Coins
     WHERE Coins.year = " . $row['year'] . "";
-
     $result_years = mysql_query($sql_years);
     $total_years = mysql_fetch_array($result_years);
 
     var_dump($total_years);
 
-    //$sql = "SELECT COUNT(*) FROM Users, Collections, Coins
-    //WHERE Collections.id_users = Users.id
-    //AND Collections.id_coins = Coins.id AND Users.login like '$username'
-    //AND Coins.year = $row['year']";
+    $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
+    WHERE Collections.id_users = Users.id
+    AND Collections.id_coins = Coins.id
+    AND Users.login like '$username'
+    AND Coins.year = " . $row['year'] . "";
+    $result_users_years = mysql_query($sql_users_years);
+    $total_users_years = mysql_fetch_array($result_users_years);
 
-    var_dump($_sql);
+    var_dump($total_users_years);
 
     echo '<div class="progress">';
     echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">';
