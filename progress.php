@@ -87,9 +87,13 @@
 
     echo '<pre>';
     var_dump($percentage);
+    echo '---';
     var_dump ($total_years);
+    echo '---';
     var_dump ($value_years);
+    echo '---';
     var_dump($username);
+    echo '---';
     var_dump($total_user_years);
     echo '</pre>';
 
