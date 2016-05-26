@@ -39,6 +39,36 @@
       60% Complete
     </div>
   </div>
+
+  <?php
+  $username = $_SESSION["username"];
+
+  //Database Credentials
+  include 'conf/db.php';
+
+  // Create & check connection
+  $conn = new mysqli($serverip, $user, $pass, $dbname);
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
+  // Create connection
+  mysql_connect($serverip, $user, $pass, $dbname);
+  mysql_select_db('2euros');
+
+  $sql = "SELECT DISTINCT year FROM Coins";
+  $result = mysql_query($sql);
+
+  while ($row = mysql_fetch_array($result)) {
+    echo '<h2>' . $row['year'] . '</h2>';
+  }
+
+  // Close MySQL connection
+  $conn->close();
+
+  ?>
+
+
 </div>
 
 </body>
