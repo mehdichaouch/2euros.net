@@ -85,9 +85,11 @@
     $value_years = (int)$total_years;
     $percentage = 100/$value_years;
 
+    echo '<pre>';
     var_dump($percentage);
     var_dump($username);
     var_dump($total_user_years);
+    echo '</pre>';
 
     echo '<div class="progress">';
     echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">';
