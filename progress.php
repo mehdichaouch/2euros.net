@@ -66,7 +66,7 @@
     echo '<h2>' . $row['year'] . '</h2>';
 
     $sql = "SELECT COUNT(*) FROM Coins
-    WHERE Coins.year = $row['year']";
+    WHERE Coins.year = " . $row['year'] . "";
 
     //$result = mysql_query($sql);
     //$total = mysql_fetch_array($result);
