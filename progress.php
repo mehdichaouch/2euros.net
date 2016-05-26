@@ -34,11 +34,12 @@
   <h2>Progress</h2>
   <p>Track your progress here !!</p>   
 
-  <div class="progress">
+  <!-- <div class="progress">
     <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
       60% Complete
     </div>
   </div>
+  -->
 
   <?php
   $username = $_SESSION["username"];
@@ -60,8 +61,8 @@
   $result = mysql_query($sql);
 
   while ($row = mysql_fetch_array($result)) {
+    echo '<br>';    
     echo '<h2>' . $row['year'] . '</h2>';
-    echo '<br>';
 
     echo'<div class="progress">';
     echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">';
