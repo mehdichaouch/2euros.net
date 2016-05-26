@@ -61,6 +61,14 @@
 
   while ($row = mysql_fetch_array($result)) {
     echo '<h2>' . $row['year'] . '</h2>';
+    echo '<br>';
+
+    echo'<div class="progress">';
+    echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">';
+    echo '60% Complete';
+    echo '</div>';
+    echo '</div>';
+
   }
 
   // Close MySQL connection
