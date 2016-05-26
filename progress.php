@@ -81,8 +81,9 @@
 
     $value_years = (int)$total_years[0];
     $percentage = 100/$value_years;
+    $user_perc = round((int)$total_user_years*$percentage);
 
-    $user_perc = (int)$total_user_years*$percentage;
+
 
     echo '<pre>';
     echo '---<br>';
