@@ -60,9 +60,24 @@
   $sql = "SELECT DISTINCT year FROM Coins";
   $result = mysql_query($sql);
 
+
   while ($row = mysql_fetch_array($result)) {
     echo '<br>';    
     echo '<h2>' . $row['year'] . '</h2>';
+
+    $sql = "SELECT COUNT(*) FROM Coins
+    WHERE Coins.year = $row['year']";
+    $result = mysql_query($sql);
+    $total = mysql_fetch_array($result);
+
+    var_dump($_sql);
+
+    $sql = "SELECT COUNT(*) FROM Users, Collections, Coins
+    WHERE Collections.id_users = Users.id
+    AND Collections.id_coins = Coins.id AND Users.login like '$username'
+    AND Coins.year = $row['year']";
+
+    var_dump($_sql);
 
     echo'<div class="progress">';
     echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">';
