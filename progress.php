@@ -83,21 +83,6 @@
     $percentage = 100/$value_years;
     $user_perc = round((int)$total_user_years[0]*$percentage);
 
-    echo '<pre>';
-    echo '---<br>';
-    var_dump($value_years);
-    echo '---<br>';
-    var_dump($percentage);
-    echo '---<br>';
-    var_dump ($total_years);
-    echo '---<br>';
-    var_dump($username);
-    echo '---<br>';
-    var_dump($total_user_years);
-    echo '---<br>';
-    var_dump($user_perc);
-    echo '</pre>';
-
     echo '<div class="progress">';
 
     if ($user_perc >= 100) {
