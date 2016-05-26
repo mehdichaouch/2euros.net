@@ -73,7 +73,6 @@
     var_dump($total_years);
 
     $username = $_SESSION["username"];
-
     $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
     WHERE Collections.id_users = Users.id
     AND Collections.id_coins = Coins.id
@@ -83,6 +82,10 @@
     $total_user_years = mysql_fetch_array($result_user_years);
 
 
+
+    $percentage = 100/$total_years;
+
+    var_dump($percentage);
     var_dump($username);
     var_dump($total_user_years);
 
