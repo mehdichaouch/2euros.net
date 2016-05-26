@@ -65,10 +65,11 @@
     echo '<br>';    
     echo '<h2>' . $row['year'] . '</h2>';
 
-    $sqlb = 'SELECT COUNT(*) FROM Coins WHERE Coins.year = '$row['year']'';
+    $sql = "SELECT COUNT(*) FROM Coins
+    WHERE Coins.year = $row['year']";
 
-    $resultb = mysql_query($sqlb);
-    $total = mysql_fetch_array($resultb);
+    //$result = mysql_query($sql);
+    //$total = mysql_fetch_array($result);
 
     //var_dump($_sql);
 
