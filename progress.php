@@ -80,6 +80,8 @@
     $result_user_years = mysql_query($sql_user_years);
     $total_user_years = mysql_fetch_array($result_user_years);
 
+
+    var_dump($username);
     var_dump($total_user_years);
 
     echo '<div class="progress">';
