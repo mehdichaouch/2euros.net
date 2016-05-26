@@ -81,9 +81,7 @@
     $result_user_years = mysql_query($sql_user_years);
     $total_user_years = mysql_fetch_array($result_user_years);
 
-
-    $value_years = $total_years;
-    $percentage = 100/$value_years;
+    $percentage = 100/(int)$total_years;
 
     echo '<pre>';
     echo '---<br>';
