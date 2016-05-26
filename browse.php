@@ -52,8 +52,8 @@
         die("Connection failed: " . $conn->connect_error);
     }
     // DB request
-    $sql = "SELECT * FROM Coins
-            ORDER BY Coins.year, Coin.country";
+    $sql = "SELECT * FROM `Coins`
+            ORDER BY Coins.year, Coins.country, Coins.event";
     $result = $conn->query($sql);
     // Results
     if ($result->num_rows > 0) {
