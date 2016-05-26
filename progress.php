@@ -72,6 +72,8 @@
 
     var_dump($total_years);
 
+    $username = $_SESSION["username"];
+
     $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
     WHERE Collections.id_users = Users.id
     AND Collections.id_coins = Coins.id
