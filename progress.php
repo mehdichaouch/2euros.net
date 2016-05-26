@@ -82,8 +82,8 @@
     $total_user_years = mysql_fetch_array($result_user_years);
 
 
-
-    $percentage = 100/$total_years;
+    $value_years = (int)$total_years;
+    $percentage = 100/$value_years;
 
     var_dump($percentage);
     var_dump($username);
