@@ -87,6 +87,8 @@
 
     if ($user_perc >= 100) {
       echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
+    } elseif ($user_perc <= 5) {
+      echo '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
     } else {
       echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
     }
