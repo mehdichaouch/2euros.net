@@ -93,7 +93,7 @@
       echo '<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
     }
 
-    $money = round((int)$total_user_years*2);
+    $money = round((int)$total_user_years[0]*2);
 
     echo '' . $user_perc . '% Complete - [ ' . $money . ' euros]';
     echo '</div>';
