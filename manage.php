@@ -215,7 +215,7 @@
         $result = mysql_query($sql);
 
         echo '<pre>';
-        var_dump($_result);
+        var_dump($result);
         echo '</pre>';
         echo '<hr>';
 
