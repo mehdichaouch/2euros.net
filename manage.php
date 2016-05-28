@@ -210,22 +210,14 @@
         // Create connection
         mysql_connect($serverip, $user, $pass, $dbname);
         mysql_select_db('2euros');
-        $sql = "SELECT DISTINCT SUBSTRING_INDEX(SUBSTRING_INDEX(SUBSTRING(COLUMN_TYPE, 7, LENGTH(COLUMN_TYPE) - 8), ',', 1 + units.i + tens.i * 10) , ',', -1) FROM INFORMATION_SCHEMA.COLUMNS CROSS JOIN (SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) units CROSS JOIN (SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) tens WHERE TABLE_NAME = 'Collections' AND COLUMN_NAME = 'coin_state'";
-        
+        $sql = "SELECT DISTINCT coin_state FROM Collections";
         $result = mysql_query($sql);
-
         $selectedState = $_GET['state'];
         while ($row = mysql_fetch_array($result)) {
           $selected = '';
           if ($row['coin_state'] === $selectedState) {
             $selected = ' selected';
           } 
-
-          echo '<pre>';
-          var_dump($sql);
-          var_dump($result);
-          echo '</pre>';
-          echo '<hr>';
 
           echo '<option value="' . $row['coin_state'] .'"'  . $selected . '>'. $row['coin_state'] . '</option>';
         }
