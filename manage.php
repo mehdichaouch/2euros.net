@@ -210,12 +210,7 @@
         // Create connection
         mysql_connect($serverip, $user, $pass, $dbname);
         mysql_select_db('2euros');
-        $sql = "SELECT DISTINCT SUBSTRING_INDEX(SUBSTRING_INDEX(SUBSTRING(COLUMN_TYPE, 7, LENGTH(COLUMN_TYPE) - 8), '','', 1 + units.i + tens.i * 10) , '','', -1)
-          FROM INFORMATION_SCHEMA.COLUMNS
-          CROSS JOIN (SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) units
-          CROSS JOIN (SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) tens
-          WHERE TABLE_NAME = 'Collections' 
-          AND COLUMN_NAME = 'coin_state'";
+        $sql = 'GOOD,BAD,MINT';
         
         $result = mysql_query($sql);
 
