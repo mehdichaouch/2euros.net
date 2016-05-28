@@ -214,6 +214,11 @@
         
         $result = mysql_query($sql);
 
+        echo '<pre>';
+        var_dump($_result);
+        echo '</pre>';
+        echo '<hr>';
+
         $selectedState = $_GET['state'];
         while ($row = mysql_fetch_array($result)) {
           $selected = '';
