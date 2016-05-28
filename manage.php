@@ -214,18 +214,18 @@
         
         $result = mysql_query($sql);
 
-        echo '<pre>';
-        var_dump($sql);
-        var_dump($result);
-        echo '</pre>';
-        echo '<hr>';
-
         $selectedState = $_GET['state'];
         while ($row = mysql_fetch_array($result)) {
           $selected = '';
           if ($row['coin_state'] === $selectedState) {
             $selected = ' selected';
           } 
+
+          echo '<pre>';
+          var_dump($sql);
+          var_dump($result);
+          echo '</pre>';
+          echo '<hr>';
 
           echo '<option value="' . $row['coin_state'] .'"'  . $selected . '>'. $row['coin_state'] . '</option>';
         }
