@@ -66,7 +66,7 @@
         WHERE Collections.id_users = Users.id
         AND Collections.id_coins = Coins.id
         AND Users.login like '$username'
-        AND Coins.year = " . $row['country'] . "";
+        AND Coins.country = " . $row['country'] . "";
         $result_user_years = mysql_query($sql_user_years);
         $total_user_years = mysql_fetch_array($result_user_years);
 
