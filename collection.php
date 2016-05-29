@@ -72,7 +72,7 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<tr style=height:50px; vertical-align:middle;>";
+            echo "<tr height=50px vertical-align=middle>";
             echo "<td>" . $row["year"]. "</td>";
             echo "<td><img src=resources/coins/" . $row["pic_url"]. " width=50 height=50 class=img-circle></a><br></td>";
             echo "<td>" . $row["country"]. "</td>";
