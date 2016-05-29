@@ -82,7 +82,7 @@
 
         echo '<div class="panel panel-default">';
         echo '<div class="panel-heading"><b>'. $row['country'] .'</b>';
-        echo '<img src=resources/flags/' . $flag_url . '.png width=16></a>';
+        echo '<img src=resources/flags/' . $flag_url . '.png width=20></a>';
         echo '</div>';
         echo '<div class="panel-body">';
         echo '<div class="progress">';
