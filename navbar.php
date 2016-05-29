@@ -23,7 +23,7 @@
           echo '</li>';
           echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Progress<span class="caret"></span></a>';
           echo '<ul class="dropdown-menu">';
-          echo '<li><a href="http://2euros.net/progress.php">By Year</a></li>';
+          echo '<li><a href="http://2euros.net/progress_year.php">By Year</a></li>';
           echo '<li><a href="http://2euros.net/progress.php">By Country</a></li>';
           echo '</ul>';
           echo '</li>';
