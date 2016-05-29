@@ -69,7 +69,6 @@
         echo '</pre>';
         echo '<hr>';
 
-
         // $username = $_SESSION["username"];
         // $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
         // WHERE Collections.id_users = Users.id
