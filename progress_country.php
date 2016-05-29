@@ -50,7 +50,8 @@
       mysql_connect($serverip, $user, $pass, $dbname);
       mysql_select_db('2euros');
 
-      $sql = "SELECT DISTINCT country FROM Coins";
+      $sql = "SELECT DISTINCT country FROM Coins
+      ORDER BY country";
       $result = mysql_query($sql);
 
       while ($row = mysql_fetch_array($result)) {
