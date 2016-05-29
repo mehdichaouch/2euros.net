@@ -62,27 +62,18 @@
         $result_country = mysql_query($sql_country);
         $total_country = mysql_fetch_array($result_country);
 
-        echo '<pre>';
-        var_dump($sql_country);
-        var_dump($result_country);
-        var_dump($total_country);
-        echo '</pre>';
-        echo '<hr>';
+        $username = $_SESSION["username"];
+        $sql_user_country = "SELECT COUNT(*) FROM Users, Collections, Coins
+        WHERE Collections.id_users = Users.id
+        AND Collections.id_coins = Coins.id
+        AND Users.login like '$username'
+        AND Coins.country = " . $row['country'] . "";
+        $result_user_country = mysql_query($sql_user_country);
+        $total_user_country = mysql_fetch_array($result_user_country);
 
-        // $username = $_SESSION["username"];
-        // $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
-        // WHERE Collections.id_users = Users.id
-        // AND Collections.id_coins = Coins.id
-        // AND Users.login like '$username'
-        // AND Coins.country = " . $row['country'] . "";
-        // $result_user_years = mysql_query($sql_user_years);
-        // $total_user_years = mysql_fetch_array($result_user_years);
-
-        // $value_years = (int)$total_years[0];
-        // $percentage = 100/$value_years;
-        // $user_perc = round((int)$total_user_years[0]*$percentage);
-
-        $user_perc = '80';
+        $value_country = (int)$total_country[0];
+        $percentage = 100/$value_country;
+        $user_perc = round((int)$total_user_country[0]*$percentage);
 
         // #--HTML--#
 
