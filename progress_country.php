@@ -78,16 +78,16 @@
 
         // #--HTML--#
 
-        echo '<div class="panel panel-default">';
-        echo '<div class="panel-heading"><b>'. $row['country'] .'</b></div>';
-        echo '<div class="panel-body">';
-        echo '<div class="progress">';
-
         echo '<pre>';
         var_dump($value_country);
         var_dump($username);
         echo '</pre>';
         echo '<hr>';
+
+        echo '<div class="panel panel-default">';
+        echo '<div class="panel-heading"><b>'. $row['country'] .'</b></div>';
+        echo '<div class="panel-body">';
+        echo '<div class="progress">';
 
         if ($user_perc >= 100) {
           echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
