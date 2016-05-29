@@ -76,10 +76,14 @@
         $percentage = 100/$value_country;
         $user_perc = round((int)$total_user_country[0]*$percentage);
 
+        $flag_url = strtolower($row['country']);
+
         // #--HTML--#
 
         echo '<div class="panel panel-default">';
-        echo '<div class="panel-heading"><b>'. $row['country'] .'</b></div>';
+        echo '<div class="panel-heading"><b>'. $row['country'] .'</b>';
+        echo '<img src=resources/coins/" . $flag_url . " width=40></a>';
+        echo '</div>';
         echo '<div class="panel-body">';
         echo '<div class="progress">';
 
