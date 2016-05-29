@@ -57,7 +57,7 @@
         echo '<br>';    
 
         $sql_years = "SELECT COUNT(*) FROM Coins
-        WHERE Coins.country = " . $row['country'] . "";
+        WHERE Coins.year = " . $row['year'] . "";
         $result_years = mysql_query($sql_years);
         $total_years = mysql_fetch_array($result_years);
 
