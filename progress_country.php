@@ -63,7 +63,9 @@
         $total_country = mysql_fetch_array($result_country);
 
         echo '<pre>';
-        var_dump($_GET);
+        var_dump($sql_country);
+        var_dump($result_country);
+        var_dump($total_country);
         echo '</pre>';
         echo '<hr>';
 
