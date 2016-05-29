@@ -30,7 +30,7 @@
   ?>
 
   <!-- CONTENT -->
-  <div class="btn-group btn-group-justified">
+  <div class="btn-group">
     <a href="#" class="btn btn-primary">By Year</a>
     <a href="#" class="btn btn-primary">By Countries</a>
     <a href="#" class="btn btn-primary">All</a>
