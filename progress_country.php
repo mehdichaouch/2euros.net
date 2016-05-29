@@ -57,28 +57,23 @@
       while ($row = mysql_fetch_array($result)) {
         echo '<br>';    
 
-        // $sql_years = "SELECT COUNT(*) FROM Coins
-        // WHERE Coins.country = " . $row['country'] . "";
-        // $result_years = mysql_query($sql_years);
-        // $total_years = mysql_fetch_array($result_years);
+        $sql_years = "SELECT COUNT(*) FROM Coins
+        WHERE Coins.country = " . $row['country'] . "";
+        $result_years = mysql_query($sql_years);
+        $total_years = mysql_fetch_array($result_years);
 
         $username = $_SESSION["username"];
-        // $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
-        // WHERE Collections.id_users = Users.id
-        // AND Collections.id_coins = Coins.id
-        // AND Users.login like '$username'
-        // AND Coins.country = " . $row['country'] . "";
-        // $result_user_years = mysql_query($sql_user_years);
-        // $total_user_years = mysql_fetch_array($result_user_years);
+        $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
+        WHERE Collections.id_users = Users.id
+        AND Collections.id_coins = Coins.id
+        AND Users.login like '$username'
+        AND Coins.country = " . $row['country'] . "";
+        $result_user_years = mysql_query($sql_user_years);
+        $total_user_years = mysql_fetch_array($result_user_years);
 
-        // $value_years = (int)$total_years[0];
-        // $percentage = 100/$value_years;
-        // $user_perc = round((int)$total_user_years[0]*$percentage);
-        $user_perc = '80';
-
-        // var_dump($value_years);
-        // var_dump($percentage);
-        // var_dump($user_perc);
+        $value_years = (int)$total_years[0];
+        $percentage = 100/$value_years;
+        $user_perc = round((int)$total_user_years[0]*$percentage);
 
         // #--HTML--#
 
