@@ -61,7 +61,7 @@
         // $result_years = mysql_query($sql_years);
         // $total_years = mysql_fetch_array($result_years);
 
-        // $username = $_SESSION["username"];
+        $username = $_SESSION["username"];
         // $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
         // WHERE Collections.id_users = Users.id
         // AND Collections.id_coins = Coins.id
@@ -82,7 +82,7 @@
         // #--HTML--#
 
         echo '<div class="panel panel-default">';
-        echo '<div class="panel-heading"><b>'. $row['year'] .'</b></div>';
+        echo '<div class="panel-heading"><b>'. $row['country'] .'</b></div>';
         echo '<div class="panel-body">';
         echo '<div class="progress">';
 
