@@ -73,6 +73,7 @@
         // $value_years = (int)$total_years[0];
         // $percentage = 100/$value_years;
         // $user_perc = round((int)$total_user_years[0]*$percentage);
+        $user_perc = '80';
 
         // var_dump($value_years);
         // var_dump($percentage);
