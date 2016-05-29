@@ -68,7 +68,7 @@
         WHERE Collections.id_users = Users.id
         AND Collections.id_coins = Coins.id
         AND Users.login like '$username'
-        AND Coins.country = " . $row['country'] . "";
+        AND Coins.country = '" . $row['country'] . "'";
         $result_user_country = mysql_query($sql_user_country);
         $total_user_country = mysql_fetch_array($result_user_country);
 
