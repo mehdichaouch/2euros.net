@@ -57,8 +57,8 @@
       while ($row = mysql_fetch_array($result)) {
         echo '<br>';    
 
-        $sql_country = "SELECT COUNT(*) FROM Coins
-        WHERE Coins.country = " . $row['country'] . "";
+        $sql_country = 'SELECT COUNT(*) FROM Coins
+        WHERE Coins.country = ' . $row['country'] .'';
         $result_country = mysql_query($sql_country);
         $total_country = mysql_fetch_array($result_country);
 
