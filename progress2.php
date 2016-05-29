@@ -32,7 +32,6 @@
   <!-- CONTENT -->
   <div class="container">
     <h2>Progress</h2>
-    <p>Track your progress here (results may vary due to DB modifications overtime)</p> 
 
     <div class="panel panel-default">
     
