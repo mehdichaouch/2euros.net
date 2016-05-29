@@ -63,7 +63,7 @@
         FROM Users, Collections, Coins
         WHERE Collections.id_users = Users.id
         AND Collections.id_coins = Coins.id AND Users.login like '$username'
-        ORDER BY Coins.coinage";
+        ORDER BY Coins.year, Coins.country, Coins.event";
 
     $result = $conn->query($sql);
 

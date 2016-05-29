@@ -17,14 +17,6 @@
   <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
   <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
   <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
-  <style type="text/css">
-    td {
-    vertical-align: baseline;
-    }
-    td img {
-    vertical-align: top;
-    }
-  </style>
 </head>
 
 <body>
