@@ -82,6 +82,7 @@
         var_dump($value_country);
         var_dump($percentage);
         var_dump($username);
+        var_dump($sql_user_country);
         var_dump($total_user_country[0]);
         echo '</pre>';
         echo '<hr>';
