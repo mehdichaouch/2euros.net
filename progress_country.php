@@ -78,15 +78,6 @@
 
         // #--HTML--#
 
-        echo '<pre>';
-        var_dump($value_country);
-        var_dump($percentage);
-        var_dump($username);
-        var_dump($sql_user_country);
-        var_dump($total_user_country[0]);
-        echo '</pre>';
-        echo '<hr>';
-
         echo '<div class="panel panel-default">';
         echo '<div class="panel-heading"><b>'. $row['country'] .'</b></div>';
         echo '<div class="panel-body">';
@@ -116,19 +107,6 @@
       $conn->close();
 
       ?>
-
-<!--     <div class="panel panel-default">
-      
-      <div class="panel-heading"><b>2005</b></div>
-      
-      <div class="panel-body">
-        <div class="progress">
-        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">40%</div><br>
-        </div>
-        Total: <b>12</b> euros
-      </div>
-
-    </div> -->
   
   </div>
 
