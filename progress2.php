@@ -30,6 +30,7 @@
   ?>
 
   <!-- CONTENT -->
+  <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
       2012
@@ -40,10 +41,11 @@
       <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
         60% Complete
       </div>
-      
+
     </div>
 
     </div>
+  </div>
   </div>
 
   <!-- 
