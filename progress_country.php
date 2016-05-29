@@ -57,10 +57,16 @@
       while ($row = mysql_fetch_array($result)) {
         echo '<br>';    
 
-        // $sql_years = "SELECT COUNT(*) FROM Coins
-        // WHERE Coins.country = " . $row['country'] . "";
-        // $result_years = mysql_query($sql_years);
-        // $total_years = mysql_fetch_array($result_years);
+        $sql_country = "SELECT COUNT(*) FROM Coins
+        WHERE Coins.country = " . $row['country'] . "";
+        $result_country = mysql_query($sql_country);
+        $total_country = mysql_fetch_array($result_country);
+
+        echo '<pre>';
+        var_dump($_GET);
+        echo '</pre>';
+        echo '<hr>';
+
 
         // $username = $_SESSION["username"];
         // $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
