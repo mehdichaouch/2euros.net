@@ -30,12 +30,14 @@
   ?>
 
   <!-- CONTENT -->
-  <div class="btn-group">
-    <a href="#" class="btn btn-primary">By Year</a>
-    <a href="#" class="btn btn-primary">By Countries</a>
-    <a href="#" class="btn btn-primary">All</a>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-body">Panel Content</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">Panel Content</div>
+    </div>
   </div>
-
 
   <!-- 
   <div class="container">
