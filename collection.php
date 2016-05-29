@@ -73,7 +73,7 @@
         while($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row["year"]. "</td>";
-            echo "<td><img src=resources/coins/" . $row["pic_url"]. " width=50 height=50 class=img-circle></a><br></td>";
+            echo "<td><img src=resources/coins/" . $row["pic_url"]. " width=50 height=50 class=img-circle style=vertical-align:middle></a><br></td>";
             echo "<td>" . $row["country"]. "</td>";
             echo "<td>" . $row["coinage"]. "</td>";
             echo "<td>" . $row["event"]. "</td>";
