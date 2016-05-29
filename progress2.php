@@ -35,8 +35,7 @@
 
     <div class="panel panel-default">
     
-      <div class="panel-heading">2005</div>
-      <br>
+      <div class="panel-heading"><b>2005</b></div>
     
       <div class="panel-body">
       
