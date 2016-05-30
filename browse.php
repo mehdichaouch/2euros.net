@@ -78,9 +78,9 @@
       while ($row = mysql_fetch_array($result_all_coins)) {
         echo '<tr>';
         echo '<td><img src=resources/coins/' . $row['pic_url'] . ' width="50px" height="50px" class="img-circle"></a></td>';
-        echo '<td>' . $row['country'] . '</td>';
-        echo '<td>' . $row['coinage'] . '</td>';
-        echo '<td>' . $row['event'] . '</td>';
+        echo '<td class="text-center">' . $row['country'] . '</td>';
+        echo '<td class="text-center">' . $row['coinage'] . '</td>';
+        echo '<td class="text-center">' . $row['event'] . '</td>';
         echo '</tr>';
       }
       echo '<tbody>';
