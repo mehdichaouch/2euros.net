@@ -35,7 +35,6 @@
     <p>Track your progress here (results may vary due to DB modifications overtime)</p> 
     
       <?php
-      $username = $_SESSION["username"];
 
       //Database Credentials
       include 'conf/db.php';
@@ -56,6 +55,7 @@
 
       echo '<br>';    
 
+      $username = $_SESSION["username"];
       $sql_user_total = "SELECT COUNT(*) FROM Users, Collections, Coins
       WHERE Collections.id_users = Users.id
       AND Collections.id_coins = Coins.id
