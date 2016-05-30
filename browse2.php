@@ -66,7 +66,6 @@
       echo 'Total: <b>' . $money . '</b> euros';
       echo '</div>';
       echo '</div>';
-      echo '</div>';
       // #--HTML--#
 
     }
