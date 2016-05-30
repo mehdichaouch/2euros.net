@@ -28,8 +28,8 @@
 
 <!-- CONTENT -->
 <div class="container">
-  <h2>Progress</h2>
-  <p>Track your progress here (results may vary due to DB modifications overtime)</p> 
+  <h2>Browse</h2>
+  <p>This is the list of all 2euros known coins</p> 
   
     <?php
 
@@ -52,46 +52,19 @@
     while ($row = mysql_fetch_array($result)) {
       echo '<br>';    
 
-      $sql_years = "SELECT COUNT(*) FROM Coins
-      WHERE Coins.year = " . $row['year'] . "";
-      $result_years = mysql_query($sql_years);
-      $total_years = mysql_fetch_array($result_years);
-
-      $username = $_SESSION["username"];
-      $sql_user_years = "SELECT COUNT(*) FROM Users, Collections, Coins
-      WHERE Collections.id_users = Users.id
-      AND Collections.id_coins = Coins.id
-      AND Users.login like '$username'
-      AND Coins.year = " . $row['year'] . "";
-      $result_user_years = mysql_query($sql_user_years);
-      $total_user_years = mysql_fetch_array($result_user_years);
-
-      $value_years = (int)$total_years[0];
-      $percentage = 100/$value_years;
-      $user_perc = round((int)$total_user_years[0]*$percentage);
-
+      $year = $row['year']
+      $sql_all_coins = "SELECT * FROM Coins WHERE Coins.year = '$year' ORDER BY Coins.country, Coins.event";
+      $result_all_coins = mysql_query($sql_all_coins);
+      $all_coins = mysql_fetch_array($result_all_coins);
 
       // #--HTML--#
 
       echo '<div class="panel panel-default">';
       echo '<div class="panel-heading"><b>'. $row['year'] .'</b></div>';
       echo '<div class="panel-body">';
-      echo '<div class="progress">';
-
-      if ($user_perc >= 100) {
-        echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
-      } elseif ($user_perc <= 5) {
-        echo '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
-      } else {
-        echo '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' . $user_perc . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $user_perc . '%">';
-      }
-
-      $money = round((int)$total_user_years[0]*2);
-
-      echo '' . $user_perc . ' %';
+      echo '';
       echo '</div>';
-      echo '</div>';
-      echo 'Total: <b>' . $money . '</b> euros';
+      echo 'Total: <b>blabla</b> euros';
       echo '</div>';
       echo '</div>';
       // #--HTML--#
