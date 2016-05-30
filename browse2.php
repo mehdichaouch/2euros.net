@@ -59,12 +59,23 @@
       $all_coins = mysql_fetch_array($result_all_coins);
 
       // #--HTML--#
-
       echo '<div class="panel panel-default">';
       echo '<div class="panel-heading"><b>'. $row['year'] .'</b></div>';
+
       echo '<div class="panel-body">';
-      echo 'Total: <b>' . $money . '</b> euros';
+
+      while ($row = mysql_fetch_array($result_all_coins)) {
+        echo '<tr>';
+        echo '<td>' . $row['year'] . '</td>';
+        echo '<td><img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a></td>';
+        echo "<td>" . $row["country"]. "</td>";
+        echo "<td>" . $row["coinage"]. "</td>";
+        echo "<td>" . $row["event"]. "</td>";
+        echo "</tr>";
+      }
+
       echo '</div>';
+
       echo '</div>';
       echo '<br>'; 
       // #--HTML--#
