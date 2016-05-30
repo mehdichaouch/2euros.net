@@ -64,7 +64,8 @@
 
       echo '<div class="panel-body">';
 
-      echo '<table>';
+      echo '<table class="table table-hover table-striped">';
+      echo '<tbody>';
       echo '<tr>';
       while ($row = mysql_fetch_array($result_all_coins)) {   
         echo '<td>' . $row['year'] . '</td>';
@@ -73,7 +74,8 @@
         echo '<td>' . $row['coinage'] . '</td>';
         echo '<td>' . $row['event'] . '</td>';
       }
-      echo "</tr>";
+      echo '</tr>';
+      echo '<tbody>';
       echo '</table>';
 
       echo '</div>';
