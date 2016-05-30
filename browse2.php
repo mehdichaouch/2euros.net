@@ -29,6 +29,7 @@
 <!-- CONTENT -->
 <div class="container">
   <h2>Browse</h2>
+  <br>
   
     <?php
 
