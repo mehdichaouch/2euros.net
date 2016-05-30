@@ -64,15 +64,15 @@
 
       echo '<div class="panel-body">';
 
-      while ($row = mysql_fetch_array($result_all_coins)) {
-        echo '<tr>';
+      echo '<tr>';
+      while ($row = mysql_fetch_array($result_all_coins)) {   
         echo '<td>' . $row['year'] . '</td>';
         echo '<td><img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a></td>';
         echo "<td>" . $row["country"]. "</td>";
         echo "<td>" . $row["coinage"]. "</td>";
         echo "<td>" . $row["event"]. "</td>";
-        echo "</tr>";
       }
+      echo "</tr>";
 
       echo '</div>';
 
