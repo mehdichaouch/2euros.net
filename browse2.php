@@ -64,13 +64,13 @@
 
       echo '<div class="panel-body">';
 
-      echo '<table class="table table-hover table-striped">';
+      echo '<table class="table table-hover table-striped table-condensed">';
       echo '<thead>';
       echo '<tr>';
       echo '<th></th>';
       echo '<th></th>';
-      echo '<th>Coinage</th>';
-      echo '<th>Event</th>';
+      echo '<th></th>';
+      echo '<th></th>';
       echo '</tr>';
       echo '</thead>';
       echo '<tbody>';
