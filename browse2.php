@@ -29,7 +29,6 @@
 <!-- CONTENT -->
 <div class="container">
   <h2>Browse</h2>
-  <p>This is the list of all 2euros known coins</p> 
   
     <?php
 
