@@ -68,6 +68,7 @@
       $user_perc = round((int)$total_user[0]*$percentage);
 
       echo '<pre>';
+      var_dump($username);
       var_dump($value_total);
       var_dump($percentage);
       var_dump($user_perc);
