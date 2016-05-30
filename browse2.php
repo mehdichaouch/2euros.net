@@ -68,9 +68,9 @@
       echo '<thead>';
       echo '<tr>';
       echo '<th></th>';
-      echo '<th></th>';
-      echo '<th></th>';
-      echo '<th></th>';
+      echo '<th><span class="glyphicon glyphicon-globe"></span></th>';
+      echo '<th>Coinage</th>';
+      echo '<th>Event</th>';
       echo '</tr>';
       echo '</thead>';
       echo '<tbody>';
