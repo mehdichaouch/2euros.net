@@ -25,6 +25,7 @@
           echo '<ul class="dropdown-menu">';
           echo '<li><a href="http://2euros.net/progress_year.php">By Year</a></li>';
           echo '<li><a href="http://2euros.net/progress_country.php">By Country</a></li>';
+          echo '<li><a href="http://2euros.net/progress_overall.php">Overall</a></li>';
           echo '</ul>';
           echo '</li>';
           }
