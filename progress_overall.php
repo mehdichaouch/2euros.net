@@ -67,6 +67,13 @@
       $percentage = 100/$value_total;
       $user_perc = round((int)$total_user[0]*$percentage);
 
+      echo '<pre>';
+      var_dump($value_total);
+      var_dump($percentage);
+      var_dump($user_perc);
+      echo '</pre>';
+      echo '<hr>';
+
       // #--HTML--#
 
       echo '<div class="panel panel-default">';
