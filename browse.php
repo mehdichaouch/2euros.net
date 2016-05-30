@@ -26,58 +26,79 @@
   include 'navbar.php';
 ?>
 
-<!-- CONTENT --> 
+<!-- CONTENT -->
 <div class="container">
   <h2>Browse</h2>
-  <p>This is the listing of all known 2 euro commemorative coins</p>                              
-  <table class="table table-hover table-striped">
-    <thead>
-      <tr>
-        <th><span class="glyphicon glyphicon-calendar"></span></th>
-        <th><span class="glyphicon glyphicon-picture"></span></th>
-        <th><span class="glyphicon glyphicon-globe"></span></th>
-        <th><span class="glyphicon glyphicon-stats"></th>
-        <th><span class="glyphicon glyphicon-education"></th>
-      </tr>
-    </thead>
-    <tbody>
-
+  <br>
+  
     <?php
+
     //Database Credentials
     include 'conf/db.php';
-    // Create connection
+
+    // Create & check connection
     $conn = new mysqli($serverip, $user, $pass, $dbname);
-    // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+      die("Connection failed: " . $conn->connect_error);
     }
-    // DB request
-    $sql = "SELECT * FROM `Coins`
-            ORDER BY Coins.year, Coins.country, Coins.event";
-    $result = $conn->query($sql);
-    // Results
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            //echo "<img src=" . $row["pic_url"]. " width=50 height=50></a> | " . $row["year"]. " | " . $row["country"]. " | " . $row["event"]. "<br>";
-            echo "<tr>";
-            echo "<td>" . $row["year"]. "</td>";
-            echo "<td><img src=resources/coins/" . $row["pic_url"]. " width=50 height=50 class=img-circle></a></td>";
-            echo "<td>" . $row["country"]. "</td>";
-            echo "<td>" . $row["coinage"]. "</td>";
-            echo "<td>" . $row["event"]. "</td>";
-            echo "</tr>";
-        }
-    // No Results
-    } else {
-        echo "0 results";
+
+    // Create connection
+    mysql_connect($serverip, $user, $pass, $dbname);
+    mysql_select_db('2euros');
+
+    $sql = "SELECT DISTINCT year FROM Coins";
+    $result = mysql_query($sql);
+
+    while ($row = mysql_fetch_array($result)) {   
+
+      $year = $row['year'];
+      $sql_all_coins = "SELECT * FROM Coins 
+      WHERE Coins.year = '$year' 
+      ORDER BY Coins.country, Coins.event";
+      $result_all_coins = mysql_query($sql_all_coins);
+      $all_coins = mysql_fetch_array($result_all_coins);
+
+      // #--HTML--#
+      echo '<div class="panel panel-default">';
+      echo '<div class="panel-heading"><b>'. $row['year'] .'</b></div>';
+
+      echo '<div class="panel-body">';
+
+      echo '<table class="table table-hover table-striped table-condensed">';
+      echo '<thead>';
+      echo '<tr>';
+      echo '<th></th>';
+      echo '<th></th>';
+      echo '<th></th>';
+      echo '<th></th>';
+      echo '</tr>';
+      echo '</thead>';
+      echo '<tbody>';
+      
+      while ($row = mysql_fetch_array($result_all_coins)) {
+        echo '<tr>';
+        echo '<td><img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a></td>';
+        echo '<td>' . $row['country'] . '</td>';
+        echo '<td>' . $row['coinage'] . '</td>';
+        echo '<td>' . $row['event'] . '</td>';
+        echo '</tr>';
+      }
+      echo '<tbody>';
+      echo '</table>';
+
+      echo '</div>';
+
+      echo '</div>';
+      echo '<br>'; 
+      // #--HTML--#
+
     }
-    // Close connection
+
+    // Close MySQL connection
     $conn->close();
+
     ?>
 
-    </tbody>
-  </table>
 </div>
 
 </body>
