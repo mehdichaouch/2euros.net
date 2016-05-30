@@ -17,15 +17,6 @@
   <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
   <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
   <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
-  
-  <style type="text/css">
-    .coin {
-      text-align: center;
-    }
-    .txtmid {
-      vertical-align: middle;
-    }
-  </style>
 </head>
 
 <body>
@@ -86,8 +77,8 @@
       
       while ($row = mysql_fetch_array($result_all_coins)) {
         echo '<tr>';
-        echo '<td class="coin"><img src=resources/coins/' . $row['pic_url'] . ' width="50px" height="50px" class="img-circle"></a></td>';
-        echo '<td class="txtmid">' . $row['country'] . '</td>';
+        echo '<td><img src=resources/coins/' . $row['pic_url'] . ' width="50px" height="50px" class="img-circle"></a></td>';
+        echo '<td>' . $row['country'] . '</td>';
         echo '<td>' . $row['coinage'] . '</td>';
         echo '<td>' . $row['event'] . '</td>';
         echo '</tr>';
