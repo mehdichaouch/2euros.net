@@ -62,9 +62,9 @@
       echo '<div class="panel panel-default">';
       echo '<div class="panel-heading"><b>'. $row['year'] .'</b></div>';
       echo '<div class="panel-body">';
-      echo '';
       echo '</div>';
-      echo 'Total: <b>blabla</b> euros';
+      echo '</div>';
+      echo 'Total: <b>' . $money . '</b> euros';
       echo '</div>';
       echo '</div>';
       // #--HTML--#
