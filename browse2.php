@@ -52,7 +52,7 @@
     while ($row = mysql_fetch_array($result)) {
       echo '<br>';    
 
-      $year = $row['year']
+      $year = $row['year'];
       $sql_all_coins = "SELECT * FROM Coins WHERE Coins.year = '$year' ORDER BY Coins.country, Coins.event";
       $result_all_coins = mysql_query($sql_all_coins);
       $all_coins = mysql_fetch_array($result_all_coins);
