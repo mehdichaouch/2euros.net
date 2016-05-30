@@ -67,7 +67,6 @@
       echo '<table class="table table-hover table-striped">';
       echo '<thead>';
       echo '<tr>';
-      echo '<th><span class="glyphicon glyphicon-calendar"></span></th>';
       echo '<th><span class="glyphicon glyphicon-picture"></span></th>';
       echo '<th><span class="glyphicon glyphicon-globe"></span></th>';
       echo '<th><span class="glyphicon glyphicon-stats"></th>';
@@ -78,7 +77,6 @@
       
       while ($row = mysql_fetch_array($result_all_coins)) {
         echo '<tr>';
-        echo '<td>' . $row['year'] . '</td>';
         echo '<td><img src=resources/coins/' . $row['pic_url'] . ' width=50 height=50 class=img-circle></a></td>';
         echo '<td>' . $row['country'] . '</td>';
         echo '<td>' . $row['coinage'] . '</td>';
