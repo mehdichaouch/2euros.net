@@ -49,11 +49,12 @@
     $sql = "SELECT DISTINCT year FROM Coins";
     $result = mysql_query($sql);
 
-    while ($row = mysql_fetch_array($result)) {
-      echo '<br>';    
+    while ($row = mysql_fetch_array($result)) {   
 
       $year = $row['year'];
-      $sql_all_coins = "SELECT * FROM Coins WHERE Coins.year = '$year' ORDER BY Coins.country, Coins.event";
+      $sql_all_coins = "SELECT * FROM Coins 
+      WHERE Coins.year = '$year' 
+      ORDER BY Coins.country, Coins.event";
       $result_all_coins = mysql_query($sql_all_coins);
       $all_coins = mysql_fetch_array($result_all_coins);
 
@@ -65,6 +66,7 @@
       echo '</div>';
       echo 'Total: <b>' . $money . '</b> euros';
       echo '</div>';
+      echo '<br>'; 
       // #--HTML--#
 
     }
