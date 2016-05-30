@@ -65,6 +65,15 @@
       echo '<div class="panel-body">';
 
       echo '<table class="table table-hover table-striped">';
+      echo '<thead>';
+      echo '<tr>';
+      echo '<th><span class="glyphicon glyphicon-calendar"></span></th>';
+      echo '<th><span class="glyphicon glyphicon-picture"></span></th>';
+      echo '<th><span class="glyphicon glyphicon-globe"></span></th>';
+      echo '<th><span class="glyphicon glyphicon-stats"></th>';
+      echo '<th><span class="glyphicon glyphicon-education"></th>';
+      echo '</tr>';
+      echo '</thead>';
       echo '<tbody>';
       
       while ($row = mysql_fetch_array($result_all_coins)) {
