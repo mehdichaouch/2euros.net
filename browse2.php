@@ -69,8 +69,8 @@
       echo '<tr>';
       echo '<th></th>';
       echo '<th></th>';
-      echo '<th></th>';
-      echo '<th></th>';
+      echo '<th>Coinage</th>';
+      echo '<th>Event</th>';
       echo '</tr>';
       echo '</thead>';
       echo '<tbody>';
